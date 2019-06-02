@@ -8,7 +8,9 @@
 
 import UIKit
 
-class AvatarComponent: UIView {
+@IBDesignable class AvatarComponent: UIView {
+    
+    private weak var componentView: UIView?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -25,8 +27,15 @@ class AvatarComponent: UIView {
         let bundle = Bundle.main
         let nib = bundle.loadNibNamed("AvatarComponent", owner: nil, options: nil)
         if let view = nib?[0] as? UIView {
+            componentView = view
             addSubview(view)
         }
     }
-
+    
+    @IBInspectable var componentBackgroundColor: UIColor = .black {
+        didSet {
+            componentView?.backgroundColor = componentBackgroundColor
+        }
+    }
+    
 }
