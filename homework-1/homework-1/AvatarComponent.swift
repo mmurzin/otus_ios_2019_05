@@ -12,6 +12,12 @@ import UIKit
     
     private weak var componentView: UIView?
     
+    @IBInspectable var componentBackgroundColor: UIColor = .black {
+        didSet {
+            componentView?.backgroundColor = componentBackgroundColor
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configure()
@@ -31,11 +37,4 @@ import UIKit
             addSubview(view)
         }
     }
-    
-    @IBInspectable var componentBackgroundColor: UIColor = .black {
-        didSet {
-            componentView?.backgroundColor = componentBackgroundColor
-        }
-    }
-    
 }
