@@ -11,11 +11,11 @@
 		CE8F9DC622A447F200D8F3B9 /* AvatarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F9DC522A447F200D8F3B9 /* AvatarComponent.swift */; };
 		CE8F9DC922A44B2100D8F3B9 /* DetailScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8F9DC722A44B2100D8F3B9 /* DetailScreen.storyboard */; };
 		CE8F9DF122AD0CE100D8F3B9 /* BenchmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F9DF022AD0CE100D8F3B9 /* BenchmarkViewController.swift */; };
-		CE8F9DF322AD13BD00D8F3B9 /* ViewControllerLifecycleBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F9DF222AD13BD00D8F3B9 /* ViewControllerLifecycleBehavior.swift */; };
 		CE8F9DF722AD1AA000D8F3B9 /* PrintTimerBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F9DF622AD1AA000D8F3B9 /* PrintTimerBehavior.swift */; };
 		CE8F9DFA22AD1C4000D8F3B9 /* ChangeColorBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F9DF922AD1C4000D8F3B9 /* ChangeColorBehavior.swift */; };
 		CE8F9DFE22AD1D4C00D8F3B9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F9DFD22AD1D4C00D8F3B9 /* ProfileViewController.swift */; };
 		CE8F9E0022AD22B700D8F3B9 /* ViewControllerC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F9DFF22AD22B700D8F3B9 /* ViewControllerC.swift */; };
+		CE8F9E0222AEADBC00D8F3B9 /* ViewControllerLifecycleBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F9E0122AEADBC00D8F3B9 /* ViewControllerLifecycleBehavior.swift */; };
 		CEA5BF8222A3E417001C2048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5BF8122A3E417001C2048 /* AppDelegate.swift */; };
 		CEA5BF8422A3E417001C2048 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5BF8322A3E417001C2048 /* ViewController.swift */; };
 		CEA5BF8722A3E417001C2048 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA5BF8522A3E417001C2048 /* Main.storyboard */; };
@@ -29,11 +29,11 @@
 		CE8F9DC522A447F200D8F3B9 /* AvatarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarComponent.swift; sourceTree = "<group>"; };
 		CE8F9DC822A44B2100D8F3B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "homework-1/Base.lproj/DetailScreen.storyboard"; sourceTree = "<group>"; };
 		CE8F9DF022AD0CE100D8F3B9 /* BenchmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkViewController.swift; sourceTree = "<group>"; };
-		CE8F9DF222AD13BD00D8F3B9 /* ViewControllerLifecycleBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerLifecycleBehavior.swift; path = ../../../../Downloads/ViewControllerLifecycleBehavior.swift; sourceTree = "<group>"; };
 		CE8F9DF622AD1AA000D8F3B9 /* PrintTimerBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintTimerBehavior.swift; sourceTree = "<group>"; };
 		CE8F9DF922AD1C4000D8F3B9 /* ChangeColorBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeColorBehavior.swift; sourceTree = "<group>"; };
 		CE8F9DFD22AD1D4C00D8F3B9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CE8F9DFF22AD22B700D8F3B9 /* ViewControllerC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerC.swift; sourceTree = "<group>"; };
+		CE8F9E0122AEADBC00D8F3B9 /* ViewControllerLifecycleBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLifecycleBehavior.swift; sourceTree = "<group>"; };
 		CEA5BF7E22A3E417001C2048 /* homework-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "homework-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA5BF8122A3E417001C2048 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEA5BF8322A3E417001C2048 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,13 +107,13 @@
 				CE8F9DFC22AD1CE300D8F3B9 /* views */,
 				CE8F9DFB22AD1CBA00D8F3B9 /* controllers */,
 				CE8F9DF822AD1C0300D8F3B9 /* behaviors */,
-				CE8F9DF222AD13BD00D8F3B9 /* ViewControllerLifecycleBehavior.swift */,
 				CE8F9DC722A44B2100D8F3B9 /* DetailScreen.storyboard */,
 				CEA5BF8122A3E417001C2048 /* AppDelegate.swift */,
 				CEA5BF8522A3E417001C2048 /* Main.storyboard */,
 				CEA5BF8822A3E418001C2048 /* Assets.xcassets */,
 				CEA5BF8A22A3E418001C2048 /* LaunchScreen.storyboard */,
 				CEA5BF8D22A3E418001C2048 /* Info.plist */,
+				CE8F9E0122AEADBC00D8F3B9 /* ViewControllerLifecycleBehavior.swift */,
 			);
 			path = "homework-1";
 			sourceTree = "<group>";
@@ -196,8 +196,8 @@
 				CE8F9E0022AD22B700D8F3B9 /* ViewControllerC.swift in Sources */,
 				CEA5BF9422A3F95F001C2048 /* ProfileButton.swift in Sources */,
 				CE8F9DF722AD1AA000D8F3B9 /* PrintTimerBehavior.swift in Sources */,
+				CE8F9E0222AEADBC00D8F3B9 /* ViewControllerLifecycleBehavior.swift in Sources */,
 				CE8F9DC622A447F200D8F3B9 /* AvatarComponent.swift in Sources */,
-				CE8F9DF322AD13BD00D8F3B9 /* ViewControllerLifecycleBehavior.swift in Sources */,
 				CE8F9DFE22AD1D4C00D8F3B9 /* ProfileViewController.swift in Sources */,
 				CEA5BF8222A3E417001C2048 /* AppDelegate.swift in Sources */,
 				CE8F9DF122AD0CE100D8F3B9 /* BenchmarkViewController.swift in Sources */,
