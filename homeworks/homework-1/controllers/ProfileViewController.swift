@@ -12,7 +12,7 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBehaviors(behaviors: [ChangeColorBehavior()])
+        addBehaviors(behaviors: [ChangeColorBehavior(), HideNavigationBarBehavior()])
     }
 
 }
