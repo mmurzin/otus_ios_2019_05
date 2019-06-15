@@ -35,12 +35,10 @@ extension ViewControllerLifecycleBehavior {
 struct HideNavigationBarBehavior: ViewControllerLifecycleBehavior {
     func beforeAppearing(_ viewController: UIViewController) {
         viewController.navigationController?.setNavigationBarHidden(true, animated: true)
-        print("HideNavigationBarBehavior \(#function)")
     }
     
     func beforeDisappearing(_ viewController: UIViewController) {
         viewController.navigationController?.setNavigationBarHidden(false, animated: true)
-        print("HideNavigationBarBehavior \(#function)")
     }
 }
 

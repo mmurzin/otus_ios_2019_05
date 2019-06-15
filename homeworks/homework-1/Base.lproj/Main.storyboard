@@ -13,7 +13,7 @@
         <!--Split View Controller-->
         <scene sceneID="cD2-63-INV">
             <objects>
-                <splitViewController id="MRr-zi-Zdh" sceneMemberID="viewController">
+                <splitViewController id="MRr-zi-Zdh" customClass="SplitViewController" customModule="homework_1" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="XRn-Rn-DQP" kind="relationship" relationship="masterViewController" id="c4a-m4-7Rw"/>
                         <segue destination="13w-lK-zoQ" kind="relationship" relationship="detailViewController" id="zv8-Fy-9nA"/>
@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="-516" y="-110"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="zhl-pM-Aeb">
             <objects>
-                <tabBarController id="XRn-Rn-DQP" sceneMemberID="viewController">
+                <tabBarController id="XRn-Rn-DQP" customClass="TabBarViewController" customModule="homework_1" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="O3U-7M-6gb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
