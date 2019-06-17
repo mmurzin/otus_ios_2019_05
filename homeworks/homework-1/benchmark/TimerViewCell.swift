@@ -17,6 +17,8 @@ class TimerViewCell: UICollectionViewCell {
             timeLabel.text = timerItem?.displayTime
             if let image = timerItem?.stateImage {
                 stateImageView.image = UIImage(named: image)
+            } else {
+                stateImageView.image = nil
             }
         }
     }

@@ -14,12 +14,16 @@ class UpdateTimersBehavior: ViewControllerLifecycleBehavior {
     var launchedTimers: [IndexPath:TimerItem] = [:]
     
     func afterAppearing(_ viewController: UIViewController) {
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+        let interval = 0.1
+        timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { timer in
             for(index, timer) in self.launchedTimers {
-               timer.increment()
-                if let controller = viewController as? BenchmarkViewController {
-                    controller.updateCell(index)
+               let needUpdateView = timer.increment(interval)
+                if needUpdateView {
+                    if let controller = viewController as? BenchmarkViewController {
+                        controller.updateCell(index)
+                    }
                 }
+                
             }
             
         }
@@ -35,8 +39,10 @@ class UpdateTimersBehavior: ViewControllerLifecycleBehavior {
     
     func didSelectTimer(_ path:IndexPath, _ timerItem: TimerItem){
         if launchedTimers[path] != nil {
+            timerItem.showPlayButton()
             launchedTimers.removeValue(forKey: path)
         } else {
+            timerItem.showPauseButton()
             launchedTimers[path] = timerItem
         }
     }

@@ -50,6 +50,7 @@ class BenchmarkViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         updateTimerBehavior.didSelectTimer(indexPath, timers[indexPath.row])
+        updateCell(indexPath)
     }
     
     func initTimers() {
