@@ -8,25 +8,41 @@
 
 import UIKit
 
-class BenchmarkViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class BenchmarkViewController: UIViewController,
+UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     var timers:[TimerItem] = []
-    
-    
-    
+    var isAutoUpdate = true
     let updateTimerBehavior: UpdateTimersBehavior = UpdateTimersBehavior()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initTimers()
         addBehaviors(behaviors: [updateTimerBehavior])
+        
+        let updateSwitch = UISwitch(frame: .zero)
+        updateSwitch.isOn = isAutoUpdate
+        updateSwitch.addTarget(self, action: #selector(autoUploadToggled(_:)), for: .valueChanged)
+        let switchItem = UIBarButtonItem(customView: updateSwitch)
+        navigationItem.rightBarButtonItem = switchItem
+    }
+    
+    @IBAction func autoUploadToggled(_ sender: UISwitch) {
+        if sender.isOn {
+            isAutoUpdate = true
+        } else {
+            isAutoUpdate = false
+        }
     }
     
     func updateCell(_ indexPath:IndexPath) {
         if let cellView = collectionView.cellForItem(at: indexPath) as? TimerViewCell {
             cellView.timerItem = timers[indexPath.row]
+            if(isAutoUpdate) {
+                cellView.updateCell()
+            }
         }
     }
     
@@ -43,6 +59,7 @@ class BenchmarkViewController: UIViewController, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "timerViewCell", for: indexPath) as? TimerViewCell {
             cell.timerItem = timers[indexPath.row]
+            cell.updateCell()
             return cell
         }
         return UICollectionViewCell()

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yRd-FA-DL1">
-    <device id="ipad10_5" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,51 +13,74 @@
         <!--Benchmark View Controller-->
         <scene sceneID="Jcb-rX-rB3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E4w-Xk-BkH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="jMa-Z5-gwe" customClass="BenchmarkViewController" customModule="homework_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5rn-pd-b7P">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gur-Bc-xAr">
-                                <rect key="frame" x="0.0" y="70" width="834" height="1042"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wdE-hG-BGB">
-                                    <size key="itemSize" width="412" height="60"/>
+                                    <size key="itemSize" width="412" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="timerViewCell" id="x03-Wp-Ged" customClass="TimerViewCell" customModule="homework_1" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="412" height="60"/>
+                                        <rect key="frame" x="1" y="0.0" width="412" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="412" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="left" fixedFrame="YES" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="i1y-yL-gho">
-                                                    <rect key="frame" x="91" y="0.0" width="230" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U7P-kC-G8Q">
-                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="60" id="Zg4-4m-Xh0"/>
-                                                                <constraint firstAttribute="height" constant="60" id="wbL-O7-KIb"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFJ-CP-yxX">
-                                                            <rect key="frame" x="61" y="6" width="169" height="48"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U7P-kC-G8Q">
+                                                    <rect key="frame" x="20" y="20" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="T6F-sE-gAt"/>
+                                                        <constraint firstAttribute="height" constant="60" id="xRg-BV-OZS"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFJ-CP-yxX">
+                                                    <rect key="frame" x="101" y="20" width="169" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="iIu-e8-aGs"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ire-me-3dK" customClass="PieChart" customModule="homework_1" customModuleProvider="target">
+                                                    <rect key="frame" x="292" y="20" width="100" height="100"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="apG-8d-eQ8"/>
+                                                        <constraint firstAttribute="height" constant="100" id="cSf-4O-cxI"/>
+                                                    </constraints>
+                                                </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jen-Vp-VIM">
+                                                    <rect key="frame" x="20" y="100" width="91" height="30"/>
+                                                    <state key="normal" title="Update chart"/>
+                                                    <connections>
+                                                        <action selector="updateCell:" destination="x03-Wp-Ged" eventType="touchUpInside" id="8yr-Pf-Jfq"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="Jen-Vp-VIM" firstAttribute="top" secondItem="U7P-kC-G8Q" secondAttribute="bottom" constant="20" id="Drt-a7-WzA"/>
+                                            <constraint firstItem="Jen-Vp-VIM" firstAttribute="leading" secondItem="x03-Wp-Ged" secondAttribute="leading" constant="20" id="Ri6-jc-zo4"/>
+                                            <constraint firstItem="U7P-kC-G8Q" firstAttribute="top" secondItem="x03-Wp-Ged" secondAttribute="top" constant="20" id="Ro2-AD-Qlq"/>
+                                            <constraint firstItem="eFJ-CP-yxX" firstAttribute="leading" secondItem="U7P-kC-G8Q" secondAttribute="trailing" constant="21" id="moa-6m-XxD"/>
+                                            <constraint firstItem="U7P-kC-G8Q" firstAttribute="leading" secondItem="x03-Wp-Ged" secondAttribute="leading" constant="20" id="niZ-W5-2fK"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ire-me-3dK" secondAttribute="trailing" constant="20" id="oSn-7C-WlX"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jen-Vp-VIM" secondAttribute="trailing" symbolic="YES" id="phP-P6-40o"/>
+                                            <constraint firstItem="eFJ-CP-yxX" firstAttribute="top" secondItem="x03-Wp-Ged" secondAttribute="top" constant="20" id="sLI-GD-4Ot"/>
+                                            <constraint firstItem="Ire-me-3dK" firstAttribute="top" secondItem="x03-Wp-Ged" secondAttribute="top" constant="20" id="uXl-KT-9lK"/>
+                                        </constraints>
                                         <connections>
+                                            <outlet property="pieChartView" destination="Ire-me-3dK" id="9Kz-We-Pja"/>
                                             <outlet property="stateImageView" destination="U7P-kC-G8Q" id="J2j-N4-Qas"/>
                                             <outlet property="timeLabel" destination="eFJ-CP-yxX" id="wI7-xv-jUc"/>
                                         </connections>
@@ -83,6 +106,7 @@
                         <outlet property="collectionView" destination="gur-Bc-xAr" id="muX-og-i6d"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E4w-Xk-BkH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2510.144927536232" y="-153.34821428571428"/>
         </scene>
@@ -93,7 +117,7 @@
                     <tabBarItem key="tabBarItem" title="Benchmark" id="88Q-bB-Nuu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wkg-jE-QUy">
-                        <rect key="frame" x="0.0" y="20" width="834" height="50"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

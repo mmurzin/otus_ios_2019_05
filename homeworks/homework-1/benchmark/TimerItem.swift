@@ -9,16 +9,27 @@
 import Foundation
 
 class TimerItem {
-    var time: Double = 0.0
+    var duration: Double = 0.0
+    var pausedTime: Double = 0.0
     var displayTime: String = "00:00:00"
     var stateImage: String? = nil
     
-    func increment(_ interval:Double) -> Bool {
-        let oldValue = Int(time)
-        time += interval
-        let current = Int(time)
-        if(current > oldValue){
+    func incrementDuration(_ interval:Double) -> Bool {
+        let oldValue = Int(duration)
+        duration += interval
+        let current = Int(duration)
+        if(current > oldValue) {
             displayTime = formatTime(current)
+            return true
+        }
+        return false
+    }
+    
+    func incrementPausedTime(_ interval:Double) -> Bool {
+        let oldValue = Int(pausedTime)
+        pausedTime += interval
+        let current = Int(pausedTime)
+        if(current > oldValue) {
             return true
         }
         return false
