@@ -52,11 +52,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ire-me-3dK" customClass="PieChart" customModule="homework_1" customModuleProvider="target">
-                                                    <rect key="frame" x="292" y="20" width="100" height="100"/>
+                                                    <rect key="frame" x="392" y="20" width="0.0" height="0.0"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="apG-8d-eQ8"/>
-                                                        <constraint firstAttribute="height" constant="100" id="cSf-4O-cxI"/>
+                                                        <constraint firstAttribute="width" id="apG-8d-eQ8"/>
+                                                        <constraint firstAttribute="height" id="cSf-4O-cxI"/>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jen-Vp-VIM">

@@ -14,25 +14,13 @@ class TimerItem {
     var displayTime: String = "00:00:00"
     var stateImage: String? = nil
     
-    func incrementDuration(_ interval:Double) -> Bool {
-        let oldValue = Int(duration)
+    func incrementDuration(_ interval:Double) {
         duration += interval
-        let current = Int(duration)
-        if(current > oldValue) {
-            displayTime = formatTime(current)
-            return true
-        }
-        return false
+        displayTime = formatTime(Int(duration))
     }
     
-    func incrementPausedTime(_ interval:Double) -> Bool {
-        let oldValue = Int(pausedTime)
+    func incrementPausedTime(_ interval:Double){
         pausedTime += interval
-        let current = Int(pausedTime)
-        if(current > oldValue) {
-            return true
-        }
-        return false
     }
     
     func formatTime(_ timeInSeconds: Int) -> String {

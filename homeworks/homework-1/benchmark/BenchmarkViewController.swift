@@ -14,7 +14,7 @@ UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var timers:[TimerItem] = []
-    var isAutoUpdate = true
+    var isAutoUpdateChart = true
     let updateTimerBehavior: UpdateTimersBehavior = UpdateTimersBehavior()
     
     override func viewDidLoad() {
@@ -23,7 +23,7 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         addBehaviors(behaviors: [updateTimerBehavior])
         
         let updateSwitch = UISwitch(frame: .zero)
-        updateSwitch.isOn = isAutoUpdate
+        updateSwitch.isOn = isAutoUpdateChart
         updateSwitch.addTarget(self, action: #selector(autoUploadToggled(_:)), for: .valueChanged)
         let switchItem = UIBarButtonItem(customView: updateSwitch)
         navigationItem.rightBarButtonItem = switchItem
@@ -31,17 +31,17 @@ UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBAction func autoUploadToggled(_ sender: UISwitch) {
         if sender.isOn {
-            isAutoUpdate = true
+            isAutoUpdateChart = true
         } else {
-            isAutoUpdate = false
+            isAutoUpdateChart = false
         }
     }
     
     func updateCell(_ indexPath:IndexPath) {
         if let cellView = collectionView.cellForItem(at: indexPath) as? TimerViewCell {
             cellView.timerItem = timers[indexPath.row]
-            if(isAutoUpdate) {
-                cellView.updateCell()
+            if(isAutoUpdateChart) {
+                cellView.updatePieChart()
             }
         }
     }
@@ -57,9 +57,17 @@ UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "timerViewCell", for: indexPath) as? TimerViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "timerViewCell",
+                                                         for: indexPath) as? TimerViewCell {
             cell.timerItem = timers[indexPath.row]
-            cell.updateCell()
+            cell.updatePieChart()
+            
+            if indexPath.row % 2 == 0 {
+                cell.setPieSmallMode()
+            } else {
+                cell.setPieLargeMode()
+            }
+            
             return cell
         }
         return UICollectionViewCell()

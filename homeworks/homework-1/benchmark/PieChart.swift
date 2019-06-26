@@ -46,6 +46,18 @@ class PieChart: UIView {
             startAngle = endAngle
         }
     }
+    
+    func setSize(width: CGFloat, height: CGFloat) {
+        heightConstraint?.constant = height
+        widthConstraint?.constant = width
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let currentPoint = touch.location(in: self)
+            print("touch x = \(currentPoint.x) y = \(currentPoint.y)")
+        }
+    }
 }
 
 extension CGPoint {
@@ -74,4 +86,26 @@ extension CGRect {
         return CGPoint(x: width / 2 + origin.x,
                        y: height / 2 + origin.y)
     }
+}
+
+extension UIView {
+    
+    var heightConstraint: NSLayoutConstraint? {
+        get {
+            return constraints.first(where: {
+                $0.firstAttribute == .height && $0.relation == .equal
+            })
+        }
+        set { setNeedsLayout() }
+    }
+    
+    var widthConstraint: NSLayoutConstraint? {
+        get {
+            return constraints.first(where: {
+                $0.firstAttribute == .width && $0.relation == .equal
+            })
+        }
+        set { setNeedsLayout() }
+    }
+    
 }
