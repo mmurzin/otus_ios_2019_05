@@ -19,6 +19,8 @@ UICollectionViewDataSource, UICollectionViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupCollectionCellWidth()
         initTimers()
         addBehaviors(behaviors: [updateTimerBehavior])
         
@@ -27,6 +29,15 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         updateSwitch.addTarget(self, action: #selector(autoUploadToggled(_:)), for: .valueChanged)
         let switchItem = UIBarButtonItem(customView: updateSwitch)
         navigationItem.rightBarButtonItem = switchItem
+    }
+    
+    func setupCollectionCellWidth() {
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            let itemWidth = view.bounds.width
+            let itemHeight = layout.itemSize.height
+            layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
+            layout.invalidateLayout()
+        }
     }
     
     @IBAction func autoUploadToggled(_ sender: UISwitch) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yRd-FA-DL1">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -22,62 +22,58 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wdE-hG-BGB">
-                                    <size key="itemSize" width="412" height="150"/>
+                                    <size key="itemSize" width="323" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="timerViewCell" id="x03-Wp-Ged" customClass="TimerViewCell" customModule="homework_1" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="0.0" width="412" height="150"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" reuseIdentifier="timerViewCell" id="x03-Wp-Ged" customClass="TimerViewCell" customModule="homework_1" customModuleProvider="target">
+                                        <rect key="frame" x="45.666666666666664" y="0.0" width="323" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="412" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="323" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U7P-kC-G8Q">
-                                                    <rect key="frame" x="20" y="20" width="60" height="60"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="T6F-sE-gAt"/>
-                                                        <constraint firstAttribute="height" constant="60" id="xRg-BV-OZS"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFJ-CP-yxX">
-                                                    <rect key="frame" x="101" y="20" width="169" height="60"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="iIu-e8-aGs"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ire-me-3dK" customClass="PieChart" customModule="homework_1" customModuleProvider="target">
-                                                    <rect key="frame" x="392" y="20" width="0.0" height="0.0"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" id="apG-8d-eQ8"/>
-                                                        <constraint firstAttribute="height" id="cSf-4O-cxI"/>
-                                                    </constraints>
-                                                </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jen-Vp-VIM">
-                                                    <rect key="frame" x="20" y="100" width="91" height="30"/>
+                                                    <rect key="frame" x="20" y="150" width="91" height="30"/>
                                                     <state key="normal" title="Update chart"/>
                                                     <connections>
                                                         <action selector="updateCell:" destination="x03-Wp-Ged" eventType="touchUpInside" id="8yr-Pf-Jfq"/>
                                                     </connections>
                                                 </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U7P-kC-G8Q">
+                                                    <rect key="frame" x="20" y="20" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="tiJ-Ly-Nti"/>
+                                                        <constraint firstAttribute="height" constant="60" id="yzG-Yn-c8F"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ire-me-3dK" customClass="PieChart" customModule="homework_1" customModuleProvider="target">
+                                                    <rect key="frame" x="243" y="70" width="60" height="60"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="osg-hZ-rho"/>
+                                                        <constraint firstAttribute="width" constant="60" id="pyW-mL-ie8"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFJ-CP-yxX">
+                                                    <rect key="frame" x="98" y="20" width="169" height="48"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Jen-Vp-VIM" firstAttribute="top" secondItem="U7P-kC-G8Q" secondAttribute="bottom" constant="20" id="Drt-a7-WzA"/>
-                                            <constraint firstItem="Jen-Vp-VIM" firstAttribute="leading" secondItem="x03-Wp-Ged" secondAttribute="leading" constant="20" id="Ri6-jc-zo4"/>
-                                            <constraint firstItem="U7P-kC-G8Q" firstAttribute="top" secondItem="x03-Wp-Ged" secondAttribute="top" constant="20" id="Ro2-AD-Qlq"/>
-                                            <constraint firstItem="eFJ-CP-yxX" firstAttribute="leading" secondItem="U7P-kC-G8Q" secondAttribute="trailing" constant="21" id="moa-6m-XxD"/>
-                                            <constraint firstItem="U7P-kC-G8Q" firstAttribute="leading" secondItem="x03-Wp-Ged" secondAttribute="leading" constant="20" id="niZ-W5-2fK"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ire-me-3dK" secondAttribute="trailing" constant="20" id="oSn-7C-WlX"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jen-Vp-VIM" secondAttribute="trailing" symbolic="YES" id="phP-P6-40o"/>
-                                            <constraint firstItem="eFJ-CP-yxX" firstAttribute="top" secondItem="x03-Wp-Ged" secondAttribute="top" constant="20" id="sLI-GD-4Ot"/>
-                                            <constraint firstItem="Ire-me-3dK" firstAttribute="top" secondItem="x03-Wp-Ged" secondAttribute="top" constant="20" id="uXl-KT-9lK"/>
+                                            <constraint firstItem="U7P-kC-G8Q" firstAttribute="leading" secondItem="x03-Wp-Ged" secondAttribute="leading" constant="20" id="0I2-PN-81r"/>
+                                            <constraint firstAttribute="bottom" secondItem="Jen-Vp-VIM" secondAttribute="bottom" constant="20" id="7Ng-CY-evf"/>
+                                            <constraint firstItem="U7P-kC-G8Q" firstAttribute="top" secondItem="x03-Wp-Ged" secondAttribute="top" constant="20" id="9BE-Ua-QxU"/>
+                                            <constraint firstItem="eFJ-CP-yxX" firstAttribute="leading" secondItem="U7P-kC-G8Q" secondAttribute="trailing" constant="18" id="LvF-uI-qMZ"/>
+                                            <constraint firstItem="eFJ-CP-yxX" firstAttribute="top" secondItem="x03-Wp-Ged" secondAttribute="top" constant="20" id="PHl-fP-6ME"/>
+                                            <constraint firstItem="Ire-me-3dK" firstAttribute="top" secondItem="eFJ-CP-yxX" secondAttribute="bottom" constant="2" id="qO4-a8-8aT"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ire-me-3dK" secondAttribute="trailing" constant="20" id="tgY-LG-Xgo"/>
+                                            <constraint firstItem="Jen-Vp-VIM" firstAttribute="leading" secondItem="x03-Wp-Ged" secondAttribute="leading" constant="20" id="zpB-ts-DLb"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="pieChartView" destination="Ire-me-3dK" id="9Kz-We-Pja"/>
@@ -108,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E4w-Xk-BkH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2510.144927536232" y="-153.34821428571428"/>
+            <point key="canvasLocation" x="2508.6956521739135" y="-154.01785714285714"/>
         </scene>
         <!--Benchmark-->
         <scene sceneID="6nM-on-t0Y">
