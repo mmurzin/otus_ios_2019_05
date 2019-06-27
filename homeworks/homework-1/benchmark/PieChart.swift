@@ -11,6 +11,8 @@ import UIKit
 struct Segment {
     let color: UIColor
     let value: CGFloat
+    let label: String
+    let labelColor: UIColor
 }
 
 class PieChart: UIView {
@@ -32,6 +34,7 @@ class PieChart: UIView {
         
         let radius = min(frame.width, frame.height) * 0.5
         let viewCenter = bounds.center
+        let textPositionOffset:CGFloat = 0.6
         let totalSegmantsValue = segments.reduce(0, {$0 + $1.value})
         var startAngle = -CGFloat.pi * 0.5
         
@@ -43,6 +46,16 @@ class PieChart: UIView {
             contex.addArc(center: viewCenter, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
             contex.fillPath()
             
+            let halfAngle = startAngle + (endAngle - startAngle)/2
+            let segmentCenter = viewCenter.projected(by: radius * textPositionOffset, angle: halfAngle)
+            let textToRender = segment.label as NSString
+            let labelAttributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.systemFont(ofSize: 10),
+                .foregroundColor: segment.labelColor
+            ]
+            let renderRect = CGRect(centeredOn: segmentCenter, size: textToRender.size(withAttributes: labelAttributes))
+            textToRender.draw(in: renderRect, withAttributes: labelAttributes)
+            
             startAngle = endAngle
         }
     }
@@ -50,13 +63,6 @@ class PieChart: UIView {
     func setSize(width: CGFloat, height: CGFloat) {
         heightConstraint?.constant = height
         widthConstraint?.constant = width
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let currentPoint = touch.location(in: self)
-            print("touch x = \(currentPoint.x) y = \(currentPoint.y)")
-        }
     }
 }
 

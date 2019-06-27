@@ -48,11 +48,19 @@ class TimerViewCell: UICollectionViewCell {
         var segments = [Segment]()
         
         if (timerItem != nil) && timerItem!.duration > 0 {
-            segments.append(Segment(color: UIColor.orange, value: CGFloat(timerItem!.duration)))
+            segments.append(Segment(color: UIColor.orange,
+                                    value: CGFloat(timerItem!.duration),
+                                    label: "launch",
+                                    labelColor: UIColor.white))
         }
         
         if (timerItem != nil) && timerItem!.pausedTime > 0 {
-            segments.append(Segment(color: UIColor.blue, value: CGFloat(timerItem!.pausedTime)))
+            segments.append(Segment(
+                color: UIColor.blue,
+                value: CGFloat(timerItem!.pausedTime),
+                label: "pause",
+                labelColor: UIColor.white
+                ))
         }
         return segments
     }
