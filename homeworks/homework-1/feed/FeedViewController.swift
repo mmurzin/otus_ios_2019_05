@@ -14,7 +14,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var tableView: UITableView!
     
-     let dataItems:[String] = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10", "Item 11", "Item 12", "Item 13", "Item 14", "Item 15", "Item 16", "Item 17", "Item 18", "Item 19", "Item 20", "Item 21", "Item 22", "Item 23", "Item 24", "Item 25", "Item 26", "Item 27", "Item 28", "Item 29", "Item 30"]
+     let dataItems:[String] = Services.feedProvider.feedData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +31,27 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard : UIStoryboard? = UIStoryboard(name: "FeedTab", bundle: nil)
+        let storyboard = UIStoryboard(name: "DataStructures", bundle: nil)
+        let name = dataItems[indexPath.row]
+        var viewController:UIViewController?
         
-        if let sessionViewController = storyboard?.instantiateViewController(withIdentifier: "SessionSummary") as? SessionSummaryViewController {
-            sessionViewController.itemName = dataItems[indexPath.row]
-            tableView.deselectRow(at: indexPath, animated: false)
-            self.navigationController?.pushViewController(sessionViewController, animated: true)
+        switch name {
+            case "Array":
+                viewController = storyboard.instantiateViewController(withIdentifier: "ArrayViewController")
+            case "Set":
+                viewController = storyboard.instantiateViewController(withIdentifier: "SetViewController")
+            case "Dictionary":
+                viewController = storyboard.instantiateViewController(withIdentifier: "DictionaryViewController")
+            case "SuffixArray":
+                print("case SuffixArray")
+            default:
+                print("viewController by \(name) not found")
         }
+        
+        if let pushViewController = viewController {
+            self.navigationController?.pushViewController(pushViewController, animated: true)
+        }
+        tableView.deselectRow(at: indexPath, animated: false)
         
     }
 
