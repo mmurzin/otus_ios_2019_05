@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CE1838EB22C36575007F2BE6 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1838EA22C36575007F2BE6 /* PieChart.swift */; };
+		CE36DF7322C94BCB00DAFA0E /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DF7222C94BCB00DAFA0E /* CGPoint.swift */; };
+		CE36DF7522C94C1500DAFA0E /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DF7422C94C1500DAFA0E /* CGRect.swift */; };
+		CE36DF7722C94C4600DAFA0E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DF7622C94C4600DAFA0E /* UIView.swift */; };
 		CE8F9DC422A4479500D8F3B9 /* AvatarComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8F9DC322A4479500D8F3B9 /* AvatarComponent.xib */; };
 		CE8F9DC622A447F200D8F3B9 /* AvatarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F9DC522A447F200D8F3B9 /* AvatarComponent.swift */; };
 		CE8F9DC922A44B2100D8F3B9 /* DetailScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8F9DC722A44B2100D8F3B9 /* DetailScreen.storyboard */; };
@@ -35,6 +38,9 @@
 
 /* Begin PBXFileReference section */
 		CE1838EA22C36575007F2BE6 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
+		CE36DF7222C94BCB00DAFA0E /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		CE36DF7422C94C1500DAFA0E /* CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		CE36DF7622C94C4600DAFA0E /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CE8F9DC322A4479500D8F3B9 /* AvatarComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarComponent.xib; sourceTree = "<group>"; };
 		CE8F9DC522A447F200D8F3B9 /* AvatarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarComponent.swift; sourceTree = "<group>"; };
 		CE8F9DC822A44B2100D8F3B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "homework-1/Base.lproj/DetailScreen.storyboard"; sourceTree = "<group>"; };
@@ -73,6 +79,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE36DF7122C94BB100DAFA0E /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE36DF7222C94BCB00DAFA0E /* CGPoint.swift */,
+				CE36DF7422C94C1500DAFA0E /* CGRect.swift */,
+				CE36DF7622C94C4600DAFA0E /* UIView.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		CEA5BF7522A3E417001C2048 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +108,7 @@
 		CEA5BF8022A3E417001C2048 /* homework-1 */ = {
 			isa = PBXGroup;
 			children = (
+				CE36DF7122C94BB100DAFA0E /* extensions */,
 				CEADCAA522B69CB80090EED2 /* utils */,
 				CEADCAA422B69C330090EED2 /* main */,
 				CEADCAA222B699920090EED2 /* profile */,
@@ -236,15 +253,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE36DF7722C94C4600DAFA0E /* UIView.swift in Sources */,
 				CEA5BF8422A3E417001C2048 /* ViewController.swift in Sources */,
 				CE1838EB22C36575007F2BE6 /* PieChart.swift in Sources */,
 				CE8F9DFA22AD1C4000D8F3B9 /* ChangeColorBehavior.swift in Sources */,
 				CEADCA5E22B4C9AE0090EED2 /* TabBarViewController.swift in Sources */,
+				CE36DF7322C94BCB00DAFA0E /* CGPoint.swift in Sources */,
 				CEA5BF9422A3F95F001C2048 /* ProfileButton.swift in Sources */,
 				CEADCAAD22B6DA940090EED2 /* UpdateTimersBehavior.swift in Sources */,
 				CE8F9DF722AD1AA000D8F3B9 /* PrintTimerBehavior.swift in Sources */,
 				CE8F9E0222AEADBC00D8F3B9 /* ViewControllerLifecycleBehavior.swift in Sources */,
 				CE8F9DC622A447F200D8F3B9 /* AvatarComponent.swift in Sources */,
+				CE36DF7522C94C1500DAFA0E /* CGRect.swift in Sources */,
 				CE8F9DFE22AD1D4C00D8F3B9 /* ProfileViewController.swift in Sources */,
 				CEADCAAF22B6DC5C0090EED2 /* TimerItem.swift in Sources */,
 				CEADCAB422B6E25F0090EED2 /* TimerViewCell.swift in Sources */,

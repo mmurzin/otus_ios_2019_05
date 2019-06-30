@@ -8,14 +8,22 @@
 
 import UIKit
 
-class BenchmarkViewController: UIViewController,
-UICollectionViewDataSource, UICollectionViewDelegate {
+class BenchmarkViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     var timers:[TimerItem] = []
     var isAutoUpdateChart = true
     let updateTimerBehavior: UpdateTimersBehavior = UpdateTimersBehavior()
+    
+    
+    @IBAction func autoUploadToggled(_ sender: UISwitch) {
+        if sender.isOn {
+            isAutoUpdateChart = true
+        } else {
+            isAutoUpdateChart = false
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,15 +47,7 @@ UICollectionViewDataSource, UICollectionViewDelegate {
             layout.invalidateLayout()
         }
     }
-    
-    @IBAction func autoUploadToggled(_ sender: UISwitch) {
-        if sender.isOn {
-            isAutoUpdateChart = true
-        } else {
-            isAutoUpdateChart = false
-        }
-    }
-    
+
     func updateCell(_ indexPath:IndexPath) {
         if let cellView = collectionView.cellForItem(at: indexPath) as? TimerViewCell {
             cellView.timerItem = timers[indexPath.row]
@@ -62,6 +62,15 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         initTimers()
         collectionView.reloadData()
     }
+    
+    func initTimers() {
+        for _ in 1...30 {
+            timers.append(TimerItem())
+        }
+    }
+}
+
+extension BenchmarkViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return timers.count
@@ -83,17 +92,13 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         }
         return UICollectionViewCell()
     }
+}
+
+extension BenchmarkViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         updateTimerBehavior.didSelectTimer(indexPath, timers[indexPath.row])
         updateCell(indexPath)
     }
-    
-    func initTimers() {
-        for _ in 1...30 {
-            timers.append(TimerItem())
-        }
-    }
-    
     
 }
