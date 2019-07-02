@@ -119,11 +119,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homework-1/feed/FeedViewController.swift"
-            timestampString = "583762181.667562"
+            timestampString = "583766896.689881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -135,11 +135,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homework-1/dataStructures/profiler/suffixArray/SwiftSuffixArrayManipulator.swift"
-            timestampString = "583762181.66763"
+            timestampString = "583766896.6903321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "searchRandomWords(count:wordSize:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -151,7 +151,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homework-1/dataStructures/SuffixArrayViewController.swift"
-            timestampString = "583762181.6676871"
+            timestampString = "583766896.690406"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"

@@ -31,6 +31,7 @@
 		CE36DFD122C968F800DAFA0E /* AlgoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFD022C968F800DAFA0E /* AlgoProvider.swift */; };
 		CE36DFD322C96A7300DAFA0E /* SuffixArrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFD222C96A7300DAFA0E /* SuffixArrayViewController.swift */; };
 		CE36DFDA22CB33E200DAFA0E /* SuffixSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFD922CB33E200DAFA0E /* SuffixSequence.swift */; };
+		CE36DFDC22CB8F5900DAFA0E /* InverseSuffixIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFDB22CB8F5900DAFA0E /* InverseSuffixIterator.swift */; };
 		CE8F9DC422A4479500D8F3B9 /* AvatarComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8F9DC322A4479500D8F3B9 /* AvatarComponent.xib */; };
 		CE8F9DC622A447F200D8F3B9 /* AvatarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F9DC522A447F200D8F3B9 /* AvatarComponent.swift */; };
 		CE8F9DC922A44B2100D8F3B9 /* DetailScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8F9DC722A44B2100D8F3B9 /* DetailScreen.storyboard */; };
@@ -81,6 +82,7 @@
 		CE36DFD022C968F800DAFA0E /* AlgoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoProvider.swift; sourceTree = "<group>"; };
 		CE36DFD222C96A7300DAFA0E /* SuffixArrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixArrayViewController.swift; sourceTree = "<group>"; };
 		CE36DFD922CB33E200DAFA0E /* SuffixSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixSequence.swift; sourceTree = "<group>"; };
+		CE36DFDB22CB8F5900DAFA0E /* InverseSuffixIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InverseSuffixIterator.swift; sourceTree = "<group>"; };
 		CE8F9DC322A4479500D8F3B9 /* AvatarComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarComponent.xib; sourceTree = "<group>"; };
 		CE8F9DC522A447F200D8F3B9 /* AvatarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarComponent.swift; sourceTree = "<group>"; };
 		CE8F9DC822A44B2100D8F3B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "homework-1/Base.lproj/DetailScreen.storyboard"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				CE36DFCC22C9679100DAFA0E /* SuffixArrayManipulator.swift */,
 				CE36DFCE22C967B600DAFA0E /* SwiftSuffixArrayManipulator.swift */,
 				CE36DFD922CB33E200DAFA0E /* SuffixSequence.swift */,
+				CE36DFDB22CB8F5900DAFA0E /* InverseSuffixIterator.swift */,
 			);
 			path = suffixArray;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				CE36DFC422C9640500DAFA0E /* SwiftSetManipulator.swift in Sources */,
 				CEADCAAB22B6D3330090EED2 /* SessionSummaryViewController.swift in Sources */,
 				CE36DFD122C968F800DAFA0E /* AlgoProvider.swift in Sources */,
+				CE36DFDC22CB8F5900DAFA0E /* InverseSuffixIterator.swift in Sources */,
 				CE8F9DF122AD0CE100D8F3B9 /* BenchmarkViewController.swift in Sources */,
 				CE36DFBB22C960E200DAFA0E /* SwiftDictionaryManipulator.swift in Sources */,
 				CEADCAA922B6D0B40090EED2 /* FeedViewController.swift in Sources */,

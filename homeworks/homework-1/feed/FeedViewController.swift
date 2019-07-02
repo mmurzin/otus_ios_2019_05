@@ -10,23 +10,49 @@ import UIKit
 
 class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-   
-    
     @IBOutlet weak var tableView: UITableView!
     
-     let dataItems:[String] = Services.feedProvider.feedData()
+    private let searchController = UISearchController(searchResultsController: nil)
+    private let suffixArrayManipulator: SuffixArrayManipulator = SwiftSuffixArrayManipulator()
+    
+    private var dataItems:[String] = Services.feedProvider.feedData()
+    private var filteterdDataItems:[String] = []
+    
+    private var isSearchBarEmpty: Bool {
+        guard let query = searchController.searchBar.text else {
+            return true
+        }
+        return query.isEmpty
+    }
+    
+    private var isFiltered: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Algorithm"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        initSearching()
+    }
+    
+    func initSearching() {
+        dataItems.append(contentsOf: Services.algoProvider.all)
+        let time = suffixArrayManipulator.setupWithObjects(items:dataItems, reverse:true)
+        print("freeze time \(time)")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataItems.count
+        return isFiltered ? filteterdDataItems.count : dataItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath)
-        cell.textLabel?.text = dataItems[indexPath.row]
+        cell.textLabel?.text = isFiltered ? filteterdDataItems[indexPath.row] : dataItems[indexPath.row]
         return cell
     }
     
@@ -54,5 +80,14 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.deselectRow(at: indexPath, animated: false)
         
     }
+}
 
+extension FeedViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let query: String = searchController.searchBar.text else {
+            return
+        }
+        filteterdDataItems = suffixArrayManipulator.searchAlgoName(query: query)
+        tableView.reloadData()
+    }
 }

@@ -56,7 +56,7 @@ class SuffixArrayViewController: DataStructuresViewController {
     
     override func test() {
         if suffixArrayMinpulator.arrayHasObjects() {
-            creationAlgoTime = suffixArrayMinpulator.setupWithObjects(Services.algoProvider.all)
+            creationAlgoTime = suffixArrayMinpulator.setupWithObjects(items:Services.algoProvider.all, reverse:false)
             search10Words = suffixArrayMinpulator.searchRandomWords(count: 10, wordSize: 3)
         } else {
             

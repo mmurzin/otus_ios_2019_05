@@ -10,11 +10,11 @@ import Foundation
 
 class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
     
-    var algoSuffixArrays:[(suffix: String, algoName: String)] = []
-    var randomSuffixArrays:[(suffix: String, algoName: String)] = []
+    var algoSuffixArray:[(suffix: String, algoName: String)] = []
+    var randomSuffixArray:[(suffix: String, algoName: String)] = []
     
     func arrayHasObjects() -> Bool {
-        if randomSuffixArrays.count == 0 {
+        if randomSuffixArray.count == 0 {
             return false
         } else {
             return true
@@ -23,13 +23,14 @@ class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
     
     func setupWithSize(_ size: Int) -> TimeInterval {
         return Profiler.runClosureForTime() {
-            self.randomSuffixArrays = self.createSuffixArray(self.randomizeWords(size: size, wordSize: 14))
+            self.randomSuffixArray = self.createSuffixArray(
+                items: self.randomizeWords(size: size, wordSize: 14), reverse: false)
         }
     }
     
-    func setupWithObjects(_ items: [String]) -> TimeInterval {
+    func setupWithObjects(items: [String], reverse: Bool) -> TimeInterval {
         let time = Profiler.runClosureForTime() {
-            self.algoSuffixArrays = self.createSuffixArray(items)
+            self.algoSuffixArray = self.createSuffixArray(items: items, reverse: reverse)
         }
         print("creation \(time)")
         return time
@@ -39,7 +40,7 @@ class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
         let time =  Profiler.runClosureForTime() {
             let words = self.randomizeWords(size: count, wordSize: wordSize)
             for word in words {
-                let result = self.search(query: word, suffixArray: self.algoSuffixArrays)
+                let result = self.search(query: word, suffixArray: self.algoSuffixArray)
                 print(result)
             }
         }
@@ -58,12 +59,21 @@ class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
         return words
     }
     
-    private func createSuffixArray(_ items: [String]) -> [(suffix: String, algoName: String)] {
+    private func createSuffixArray(items: [String], reverse: Bool) -> [(suffix: String, algoName: String)] {
         var suffixArray:[(suffix: String, algoName: String)] = []
         for word in items {
-            for suffix in SuffixSequence(string: word) {
-                suffixArray
-                    .append((suffix: String(suffix), algoName: word))
+            if(reverse) {
+                for suffix in InverseSuffixSequence(string: word) {
+                    print("create suffix = \(suffix)")
+                    suffixArray
+                        .append((suffix: String(suffix), algoName: word))
+                }
+            } else {
+                for suffix in SuffixSequence(string: word) {
+                    print("create suffix = \(suffix)")
+                    suffixArray
+                        .append((suffix: String(suffix), algoName: word))
+                }
             }
         }
         suffixArray.sort {
@@ -78,6 +88,7 @@ class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
         var isPrefixGroupFounded = false
         for item in suffixArray {
             if(queryPrefix == item.suffix.prefix(1)){
+                print("suffix = \(item.suffix)")
                 isPrefixGroupFounded = true
             }
             
@@ -85,12 +96,17 @@ class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
                 break
             }
             
-            if(item.suffix == query) {
+            if(isPrefixGroupFounded && item.suffix == query) {
                 result.insert(item.algoName)
             }
         }
         return Array(result)
     }
+    
+    func searchAlgoName(query: String) -> [String] {
+        return search(query: query, suffixArray: algoSuffixArray)
+    }
+    
 }
 
 

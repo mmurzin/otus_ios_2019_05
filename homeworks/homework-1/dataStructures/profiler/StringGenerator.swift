@@ -9,14 +9,14 @@
 import Foundation
 
 open class StringGenerator {
-    fileprivate let alphanumericCharacterString: String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+    fileprivate let alphaCharacterString: String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
     
     open func generateRandomString(_ length: Int) -> String {
         var randomString = String()
         for _ in 0 ..< length {
-            let elements = UInt32(alphanumericCharacterString.count)
+            let elements = UInt32(alphaCharacterString.count)
             let randomIndex = Int(arc4random_uniform(elements))
-            randomString += String(Array(alphanumericCharacterString)[randomIndex])
+            randomString += String(Array(alphaCharacterString)[randomIndex])
         }
         
         return randomString
