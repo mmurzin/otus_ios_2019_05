@@ -26,6 +26,11 @@
 		CE36DFC422C9640500DAFA0E /* SwiftSetManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFC322C9640500DAFA0E /* SwiftSetManipulator.swift */; };
 		CE36DFC622C9642400DAFA0E /* StringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFC522C9642400DAFA0E /* StringGenerator.swift */; };
 		CE36DFC822C9645900DAFA0E /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFC722C9645900DAFA0E /* SetViewController.swift */; };
+		CE36DFCD22C9679100DAFA0E /* SuffixArrayManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFCC22C9679100DAFA0E /* SuffixArrayManipulator.swift */; };
+		CE36DFCF22C967B600DAFA0E /* SwiftSuffixArrayManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFCE22C967B600DAFA0E /* SwiftSuffixArrayManipulator.swift */; };
+		CE36DFD122C968F800DAFA0E /* AlgoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFD022C968F800DAFA0E /* AlgoProvider.swift */; };
+		CE36DFD322C96A7300DAFA0E /* SuffixArrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFD222C96A7300DAFA0E /* SuffixArrayViewController.swift */; };
+		CE36DFDA22CB33E200DAFA0E /* SuffixSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFD922CB33E200DAFA0E /* SuffixSequence.swift */; };
 		CE8F9DC422A4479500D8F3B9 /* AvatarComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8F9DC322A4479500D8F3B9 /* AvatarComponent.xib */; };
 		CE8F9DC622A447F200D8F3B9 /* AvatarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F9DC522A447F200D8F3B9 /* AvatarComponent.swift */; };
 		CE8F9DC922A44B2100D8F3B9 /* DetailScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8F9DC722A44B2100D8F3B9 /* DetailScreen.storyboard */; };
@@ -71,6 +76,11 @@
 		CE36DFC322C9640500DAFA0E /* SwiftSetManipulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSetManipulator.swift; sourceTree = "<group>"; };
 		CE36DFC522C9642400DAFA0E /* StringGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringGenerator.swift; sourceTree = "<group>"; };
 		CE36DFC722C9645900DAFA0E /* SetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
+		CE36DFCC22C9679100DAFA0E /* SuffixArrayManipulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixArrayManipulator.swift; sourceTree = "<group>"; };
+		CE36DFCE22C967B600DAFA0E /* SwiftSuffixArrayManipulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSuffixArrayManipulator.swift; sourceTree = "<group>"; };
+		CE36DFD022C968F800DAFA0E /* AlgoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoProvider.swift; sourceTree = "<group>"; };
+		CE36DFD222C96A7300DAFA0E /* SuffixArrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixArrayViewController.swift; sourceTree = "<group>"; };
+		CE36DFD922CB33E200DAFA0E /* SuffixSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixSequence.swift; sourceTree = "<group>"; };
 		CE8F9DC322A4479500D8F3B9 /* AvatarComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarComponent.xib; sourceTree = "<group>"; };
 		CE8F9DC522A447F200D8F3B9 /* AvatarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarComponent.swift; sourceTree = "<group>"; };
 		CE8F9DC822A44B2100D8F3B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "homework-1/Base.lproj/DetailScreen.storyboard"; sourceTree = "<group>"; };
@@ -123,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				CE36DFA422C9595A00DAFA0E /* Services.swift */,
+				CE36DFD022C968F800DAFA0E /* AlgoProvider.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -136,6 +147,7 @@
 				CE36DFAE22C95E8100DAFA0E /* ArrayViewController.swift */,
 				CE36DFBE22C9612800DAFA0E /* DictionaryViewController.swift */,
 				CE36DFC722C9645900DAFA0E /* SetViewController.swift */,
+				CE36DFD222C96A7300DAFA0E /* SuffixArrayViewController.swift */,
 			);
 			path = dataStructures;
 			sourceTree = "<group>";
@@ -143,6 +155,7 @@
 		CE36DFB122C95ED900DAFA0E /* profiler */ = {
 			isa = PBXGroup;
 			children = (
+				CE36DFC922C966AE00DAFA0E /* suffixArray */,
 				CE36DFC022C963B900DAFA0E /* set */,
 				CE36DFB222C95EF000DAFA0E /* array */,
 				CE36DFB922C960BE00DAFA0E /* dictionary */,
@@ -177,6 +190,16 @@
 				CE36DFC322C9640500DAFA0E /* SwiftSetManipulator.swift */,
 			);
 			path = set;
+			sourceTree = "<group>";
+		};
+		CE36DFC922C966AE00DAFA0E /* suffixArray */ = {
+			isa = PBXGroup;
+			children = (
+				CE36DFCC22C9679100DAFA0E /* SuffixArrayManipulator.swift */,
+				CE36DFCE22C967B600DAFA0E /* SwiftSuffixArrayManipulator.swift */,
+				CE36DFD922CB33E200DAFA0E /* SuffixSequence.swift */,
+			);
+			path = suffixArray;
 			sourceTree = "<group>";
 		};
 		CEA5BF7522A3E417001C2048 = {
@@ -351,6 +374,7 @@
 				CE36DFBF22C9612800DAFA0E /* DictionaryViewController.swift in Sources */,
 				CE36DFB622C95F2900DAFA0E /* SwiftArrayManipulator.swift in Sources */,
 				CE36DFBD22C960FD00DAFA0E /* DictionaryManipulator.swift in Sources */,
+				CE36DFDA22CB33E200DAFA0E /* SuffixSequence.swift in Sources */,
 				CE36DFC622C9642400DAFA0E /* StringGenerator.swift in Sources */,
 				CE36DFB422C95F0800DAFA0E /* ArrayManipulator.swift in Sources */,
 				CE36DFAD22C95E4600DAFA0E /* DataStructuresViewController.swift in Sources */,
@@ -358,6 +382,8 @@
 				CE36DFAF22C95E8100DAFA0E /* ArrayViewController.swift in Sources */,
 				CEA5BF8422A3E417001C2048 /* ViewController.swift in Sources */,
 				CE1838EB22C36575007F2BE6 /* PieChart.swift in Sources */,
+				CE36DFCD22C9679100DAFA0E /* SuffixArrayManipulator.swift in Sources */,
+				CE36DFD322C96A7300DAFA0E /* SuffixArrayViewController.swift in Sources */,
 				CE8F9DFA22AD1C4000D8F3B9 /* ChangeColorBehavior.swift in Sources */,
 				CEADCA5E22B4C9AE0090EED2 /* TabBarViewController.swift in Sources */,
 				CE36DF7322C94BCB00DAFA0E /* CGPoint.swift in Sources */,
@@ -370,11 +396,13 @@
 				CE8F9DC622A447F200D8F3B9 /* AvatarComponent.swift in Sources */,
 				CE36DF7522C94C1500DAFA0E /* CGRect.swift in Sources */,
 				CE8F9DFE22AD1D4C00D8F3B9 /* ProfileViewController.swift in Sources */,
+				CE36DFCF22C967B600DAFA0E /* SwiftSuffixArrayManipulator.swift in Sources */,
 				CEADCAAF22B6DC5C0090EED2 /* TimerItem.swift in Sources */,
 				CEADCAB422B6E25F0090EED2 /* TimerViewCell.swift in Sources */,
 				CEA5BF8222A3E417001C2048 /* AppDelegate.swift in Sources */,
 				CE36DFC422C9640500DAFA0E /* SwiftSetManipulator.swift in Sources */,
 				CEADCAAB22B6D3330090EED2 /* SessionSummaryViewController.swift in Sources */,
+				CE36DFD122C968F800DAFA0E /* AlgoProvider.swift in Sources */,
 				CE8F9DF122AD0CE100D8F3B9 /* BenchmarkViewController.swift in Sources */,
 				CE36DFBB22C960E200DAFA0E /* SwiftDictionaryManipulator.swift in Sources */,
 				CEADCAA922B6D0B40090EED2 /* FeedViewController.swift in Sources */,
@@ -543,6 +571,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WWP8MGH2XD;
 				INFOPLIST_FILE = "homework-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -560,6 +589,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WWP8MGH2XD;
 				INFOPLIST_FILE = "homework-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

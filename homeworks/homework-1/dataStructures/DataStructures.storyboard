@@ -294,5 +294,100 @@
             </objects>
             <point key="canvasLocation" x="386" y="-1385"/>
         </scene>
+        <!--Suffix Array View Controller-->
+        <scene sceneID="neJ-gr-caw">
+            <objects>
+                <viewController storyboardIdentifier="SuffixArrayViewController" id="OD7-J5-juD" customClass="SuffixArrayViewController" customModule="homework_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HC3-EB-v5X"/>
+                        <viewControllerLayoutGuide type="bottom" id="1ru-Br-cqd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TU3-EU-xK1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="1000" maxValue="10000000" translatesAutoresizingMaskIntoConstraints="NO" id="X71-8M-stA">
+                                <rect key="frame" x="18" y="52" width="378" height="31"/>
+                                <connections>
+                                    <action selector="sliderAdjusted:" destination="OD7-J5-juD" eventType="valueChanged" id="78j-qy-jDS"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="um5-wA-wdr">
+                                <rect key="frame" x="161" y="90" width="92.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hty-UM-Wh0">
+                                <rect key="frame" x="152" y="126.5" width="110" height="30"/>
+                                <state key="normal" title="Create And Test">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="createAndTest" destination="OD7-J5-juD" eventType="touchUpInside" id="rGC-AJ-nIW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm6-Cl-sYX">
+                                <rect key="frame" x="174.5" y="160.5" width="65" height="30"/>
+                                <state key="normal" title="Test Only">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="testOnly" destination="OD7-J5-juD" eventType="touchUpInside" id="hg0-1J-FHp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result Times" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6H-a4-4vp">
+                                <rect key="frame" x="154.5" y="198.5" width="105.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RoE-CV-lkd">
+                                <rect key="frame" x="0.0" y="227" width="414" height="635"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="OD7-J5-juD" id="Vxx-oH-Umc"/>
+                                    <outlet property="delegate" destination="OD7-J5-juD" id="Ftq-X0-xNj"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="68b-Ge-hJ4">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="X71-8M-stA" firstAttribute="leading" secondItem="TU3-EU-xK1" secondAttribute="leading" constant="20" id="6l1-6w-thE"/>
+                            <constraint firstItem="X6H-a4-4vp" firstAttribute="top" secondItem="Wm6-Cl-sYX" secondAttribute="bottom" constant="8" id="LKY-6q-8rN"/>
+                            <constraint firstAttribute="centerY" secondItem="68b-Ge-hJ4" secondAttribute="centerY" id="Lvw-fW-JtA"/>
+                            <constraint firstAttribute="centerX" secondItem="hty-UM-Wh0" secondAttribute="centerX" id="O1X-f6-paL"/>
+                            <constraint firstAttribute="centerX" secondItem="Wm6-Cl-sYX" secondAttribute="centerX" id="atm-nm-mhJ"/>
+                            <constraint firstItem="hty-UM-Wh0" firstAttribute="top" secondItem="um5-wA-wdr" secondAttribute="bottom" constant="16" id="dRc-gK-Tc6"/>
+                            <constraint firstAttribute="centerX" secondItem="68b-Ge-hJ4" secondAttribute="centerX" id="daq-Yo-eKZ"/>
+                            <constraint firstItem="X71-8M-stA" firstAttribute="top" secondItem="HC3-EB-v5X" secondAttribute="bottom" constant="8" id="ebz-Ow-dEg"/>
+                            <constraint firstAttribute="centerX" secondItem="X6H-a4-4vp" secondAttribute="centerX" id="ije-fc-yTy"/>
+                            <constraint firstItem="Wm6-Cl-sYX" firstAttribute="top" secondItem="hty-UM-Wh0" secondAttribute="bottom" constant="4" id="ilM-iA-KcZ"/>
+                            <constraint firstItem="RoE-CV-lkd" firstAttribute="top" secondItem="X6H-a4-4vp" secondAttribute="bottom" constant="8" id="jcD-k0-w9M"/>
+                            <constraint firstItem="um5-wA-wdr" firstAttribute="top" secondItem="X71-8M-stA" secondAttribute="bottom" constant="8" id="mBx-4C-0dz"/>
+                            <constraint firstAttribute="trailing" secondItem="RoE-CV-lkd" secondAttribute="trailing" id="mWA-M3-btf"/>
+                            <constraint firstAttribute="centerX" secondItem="um5-wA-wdr" secondAttribute="centerX" id="oUF-je-A1q"/>
+                            <constraint firstItem="RoE-CV-lkd" firstAttribute="leading" secondItem="TU3-EU-xK1" secondAttribute="leading" id="tCd-UT-B46"/>
+                            <constraint firstAttribute="trailing" secondItem="X71-8M-stA" secondAttribute="trailing" constant="20" id="tJr-tu-l08"/>
+                            <constraint firstItem="1ru-Br-cqd" firstAttribute="top" secondItem="RoE-CV-lkd" secondAttribute="bottom" id="xv9-dy-G4R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countLabel" destination="um5-wA-wdr" id="NEL-Xf-Gwk"/>
+                        <outlet property="createAndTestButton" destination="hty-UM-Wh0" id="1Sp-6y-tyY"/>
+                        <outlet property="resultsTableView" destination="RoE-CV-lkd" id="L4A-hK-MUH"/>
+                        <outlet property="slider" destination="X71-8M-stA" id="aKh-7P-KNe"/>
+                        <outlet property="spinner" destination="68b-Ge-hJ4" id="aEI-Zk-uEb"/>
+                        <outlet property="testOnlyButton" destination="Wm6-Cl-sYX" id="qxD-dw-N98"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sg1-19-i1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1097" y="-1392"/>
+        </scene>
     </scenes>
 </document>

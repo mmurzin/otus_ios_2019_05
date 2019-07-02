@@ -9,7 +9,7 @@
 import Foundation
 
 open class StringGenerator {
-    fileprivate let alphanumericCharacterString: String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    fileprivate let alphanumericCharacterString: String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
     
     open func generateRandomString(_ length: Int) -> String {
         var randomString = String()

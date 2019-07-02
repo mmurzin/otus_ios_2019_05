@@ -43,7 +43,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             case "Dictionary":
                 viewController = storyboard.instantiateViewController(withIdentifier: "DictionaryViewController")
             case "SuffixArray":
-                print("case SuffixArray")
+                viewController = storyboard.instantiateViewController(withIdentifier: "SuffixArrayViewController")
             default:
                 print("viewController by \(name) not found")
         }
