@@ -10,35 +10,84 @@ import UIKit
 
 class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-   
-    
     @IBOutlet weak var tableView: UITableView!
     
-     let dataItems:[String] = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10", "Item 11", "Item 12", "Item 13", "Item 14", "Item 15", "Item 16", "Item 17", "Item 18", "Item 19", "Item 20", "Item 21", "Item 22", "Item 23", "Item 24", "Item 25", "Item 26", "Item 27", "Item 28", "Item 29", "Item 30"]
+    private let searchController = UISearchController(searchResultsController: nil)
+    private let suffixArrayManipulator: SuffixArrayManipulator = SwiftSuffixArrayManipulator()
+    
+    private var dataItems:[String] = Services.feedProvider.feedData()
+    private var filteterdDataItems:[String] = []
+    
+    private var isSearchBarEmpty: Bool {
+        guard let query = searchController.searchBar.text else {
+            return true
+        }
+        return query.isEmpty
+    }
+    
+    private var isFiltered: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Algorithm"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        initSearching()
+    }
+    
+    func initSearching() {
+        dataItems.append(contentsOf: Services.algoProvider.all)
+        let time = suffixArrayManipulator.setupWithObjects(items:dataItems, reverse:true)
+        print("freeze time \(time)")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataItems.count
+        return isFiltered ? filteterdDataItems.count : dataItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath)
-        cell.textLabel?.text = dataItems[indexPath.row]
+        cell.textLabel?.text = isFiltered ? filteterdDataItems[indexPath.row] : dataItems[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard : UIStoryboard? = UIStoryboard(name: "FeedTab", bundle: nil)
+        let storyboard = UIStoryboard(name: "DataStructures", bundle: nil)
+        let name = dataItems[indexPath.row]
+        var viewController:UIViewController?
         
-        if let sessionViewController = storyboard?.instantiateViewController(withIdentifier: "SessionSummary") as? SessionSummaryViewController {
-            sessionViewController.itemName = dataItems[indexPath.row]
-            tableView.deselectRow(at: indexPath, animated: false)
-            self.navigationController?.pushViewController(sessionViewController, animated: true)
+        switch name {
+            case "Array":
+                viewController = storyboard.instantiateViewController(withIdentifier: "ArrayViewController")
+            case "Set":
+                viewController = storyboard.instantiateViewController(withIdentifier: "SetViewController")
+            case "Dictionary":
+                viewController = storyboard.instantiateViewController(withIdentifier: "DictionaryViewController")
+            case "SuffixArray":
+                viewController = storyboard.instantiateViewController(withIdentifier: "SuffixArrayViewController")
+            default:
+                print("viewController by \(name) not found")
         }
         
+        if let pushViewController = viewController {
+            self.navigationController?.pushViewController(pushViewController, animated: true)
+        }
+        tableView.deselectRow(at: indexPath, animated: false)
+        
     }
+}
 
+extension FeedViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let query: String = searchController.searchBar.text else {
+            return
+        }
+        filteterdDataItems = suffixArrayManipulator.searchAlgoName(query: query)
+        tableView.reloadData()
+    }
 }
