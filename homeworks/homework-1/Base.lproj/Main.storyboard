@@ -13,7 +13,7 @@
         <!--Split View Controller-->
         <scene sceneID="cD2-63-INV">
             <objects>
-                <splitViewController id="MRr-zi-Zdh" customClass="SplitViewController" customModule="homework_1" customModuleProvider="target" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="SplitViewController" id="MRr-zi-Zdh" customClass="SplitViewController" customModule="homework_1" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="XRn-Rn-DQP" kind="relationship" relationship="masterViewController" id="c4a-m4-7Rw"/>
                         <segue destination="13w-lK-zoQ" kind="relationship" relationship="detailViewController" id="zv8-Fy-9nA"/>

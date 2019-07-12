@@ -67,11 +67,20 @@
                                     </tableView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZB-dX-afp">
+                                <rect key="frame" x="5" y="54" width="30" height="30"/>
+                                <state key="normal" title="&lt;"/>
+                                <connections>
+                                    <action selector="homeButtonClicked:" destination="dTR-cI-06R" eventType="touchUpInside" id="bu7-vN-zGV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ki1-cN-FUQ" firstAttribute="centerX" secondItem="VOk-qf-KDE" secondAttribute="centerX" id="6Zs-sR-0xC"/>
+                            <constraint firstItem="TZB-dX-afp" firstAttribute="top" secondItem="fWO-Jn-9rn" secondAttribute="top" constant="10" id="FXX-2g-K1N"/>
                             <constraint firstItem="VOk-qf-KDE" firstAttribute="top" secondItem="fWO-Jn-9rn" secondAttribute="top" constant="15" id="PEa-lX-dL9"/>
+                            <constraint firstItem="TZB-dX-afp" firstAttribute="leading" secondItem="fWO-Jn-9rn" secondAttribute="leading" constant="5" id="Tkc-Yz-QJM"/>
                             <constraint firstItem="VOk-qf-KDE" firstAttribute="centerX" secondItem="Lcs-8e-K8F" secondAttribute="centerX" id="Yaf-fc-S2M"/>
                             <constraint firstItem="Ki1-cN-FUQ" firstAttribute="leading" secondItem="Lcs-8e-K8F" secondAttribute="leadingMargin" id="c13-TV-Ti4"/>
                             <constraint firstItem="Ki1-cN-FUQ" firstAttribute="top" secondItem="VOk-qf-KDE" secondAttribute="bottom" constant="8" symbolic="YES" id="gpX-Uo-ska"/>

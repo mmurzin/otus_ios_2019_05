@@ -17,12 +17,16 @@ class DataStructuresViewController: UIViewController, UITableViewDataSource, UIT
     
     //MARK: IBOutlets
     
-    @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var resultsTableView: UITableView!
     @IBOutlet weak var createAndTestButton: UIButton!
     @IBOutlet weak var testOnlyButton: UIButton!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var segmentElements: UISegmentedControl!
+    
+    
+    let sizesForTest = [100, 1000, 10000, 100000, 1000000, 10000000]
+    
     
     //MARK: item tracking
     
@@ -61,6 +65,8 @@ class DataStructuresViewController: UIViewController, UITableViewDataSource, UIT
         testOnlyButton.isEnabled = false
         resultsTableView.isScrollEnabled = false
         updateCountLabel()
+        numberOfItems = sizesForTest[segmentElements.selectedSegmentIndex]
+        updateCountLabel()
     }
     
     //MARK: Create/Test
@@ -78,16 +84,11 @@ class DataStructuresViewController: UIViewController, UITableViewDataSource, UIT
     func updateCountLabel() {
         countLabel.text = "Number of items: \(numberFormatter.string(from: numberOfItems as NSNumber)!)"
     }
-    
-    func setSliderValueProgrammatically(_ value: Int) {
-        slider.value = Float(value)
-        sliderAdjusted(slider)
-    }
+   
     
     func setControlsEnabled(_ enabled: Bool) {
         testOnlyButton.isEnabled = enabled
         createAndTestButton.isEnabled = enabled
-        slider.isEnabled = enabled
         if enabled {
             spinner.stopAnimating()
         } else {
@@ -134,6 +135,11 @@ class DataStructuresViewController: UIViewController, UITableViewDataSource, UIT
                 self.setControlsEnabled(true)
             }
         }
+    }
+    
+    @IBAction func segmentChanged(_ sender: Any) {
+        numberOfItems = sizesForTest[segmentElements.selectedSegmentIndex]
+        updateCountLabel()
     }
     
     //MARK: UITableViewDataSource

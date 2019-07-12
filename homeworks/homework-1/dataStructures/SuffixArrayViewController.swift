@@ -47,7 +47,7 @@ class SuffixArrayViewController: DataStructuresViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createAndTestButton.setTitle("Create SuffixArray and Test", for: [])
-        slider.isEnabled = false
+        
     }
     
     override func create(_ size: Int) {

@@ -51,6 +51,11 @@ class SharedViewController: UIViewController {
         loadCurrentTabData()
     }
     
+    @IBAction func homeButtonClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "SplitViewController")
+        present(mainViewController, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeViews()
