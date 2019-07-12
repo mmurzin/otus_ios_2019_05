@@ -26,16 +26,23 @@ class SharedViewController: UIViewController {
 //    Наличие механизма шаринга - 20 баллов
 //    Переключение локалей на тексте - 30 баллов
     
+    typealias RegexpUnitItem = (regex: String, unit: UnitLength)
+    
     @IBOutlet weak var resultsTableView: UITableView!
     @IBOutlet weak var sharedTextVIew: UITextView!
     @IBOutlet weak var localeSegments: UISegmentedControl!
     
     
     let dateRegex = #"\d{1,2}\/\d{1,2}\/\d{4}"#
+    let lengthRegexItems = [
+        RegexpUnitItem(regex: #"[0-9]+(\.|\,)?[0-9]*\s*(метров|метр|м)"#, unit: UnitLength.meters)
+    ]
     
-    var sharedText = "23/12/2001, 12/12/2012"
+    var sharedText = "23/12/2001, 12/12/2012, 100 м, 200 м, 1 метр, 5 метров, 1.5 м, 2,5 м"
     var locales = [Locale]()
     var datesInText = [Date]()
+    var measurementInText = [Measurement]()
+    
     var resultItems = [String]()
     
     @IBAction func segmentedIndexChanged(_ sender: Any) {
@@ -46,6 +53,7 @@ class SharedViewController: UIViewController {
         super.viewDidLoad()
         initializeViews()
         searchDateItems()
+        searchLengthItems()
         loadCurrentTabData()
     }
     
@@ -59,6 +67,7 @@ class SharedViewController: UIViewController {
         let currentLocale = locales[localeSegments.selectedSegmentIndex]
         resultItems.removeAll()
         resultItems.append(contentsOf: getTimeItemsWithLocale(locale: currentLocale))
+        resultItems.append(contentsOf: getLengthItemsWithLocale(locale: currentLocale))
         resultsTableView.reloadData()
     }
     
@@ -71,6 +80,23 @@ class SharedViewController: UIViewController {
                 datesInText.append(date)
             }
         }
+    }
+    
+    
+    func searchLengthItems() {
+        for regexpItem in lengthRegexItems {
+            let foundItems = self.search(text: sharedText, regex: regexpItem.regex)
+            for lengthItem in foundItems {
+                var digit = lengthItem.trimmingCharacters(in: CharacterSet(charactersIn: "01234567890.,").inverted)
+                digit = digit.replacingOccurrences(of: ",", with: ".")
+                if let unitValue = Double(digit) {
+                    measurementInText.append(Measurement(value: unitValue, unit: regexpItem.unit))
+                } else {
+                    print("Invalid value \(digit)")
+                }
+            }
+        }
+        print(measurementInText)
     }
     
     func initLocales() {
@@ -122,6 +148,17 @@ class SharedViewController: UIViewController {
         }
         
         return dates
+    }
+    
+    func getLengthItemsWithLocale(locale:Locale) -> [String] {
+        var items = [String]()
+        let measurementFormatter = MeasurementFormatter()
+        measurementFormatter.locale = locale
+        
+        for measurement in measurementInText {
+            items.append(measurementFormatter.string(from: measurement))
+        }
+        return items
     }
 
 }
