@@ -18,21 +18,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONW-Zx-Jrg">
-                                <rect key="frame" x="186" y="438" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VOk-qf-KDE">
+                                <rect key="frame" x="126.5" y="59" width="161" height="29"/>
+                                <segments>
+                                    <segment title="eng"/>
+                                    <segment title="fr"/>
+                                    <segment title="zh_CN"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedIndexChanged:" destination="dTR-cI-06R" eventType="valueChanged" id="Sfm-4h-obM"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ki1-cN-FUQ">
+                                <rect key="frame" x="20" y="95" width="374" height="767"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ee3-1R-1sd">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="383.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Asm-Dt-pct">
+                                        <rect key="frame" x="0.0" y="383.5" width="374" height="383.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.93237159150000004" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ki1-cN-FUQ" firstAttribute="centerX" secondItem="VOk-qf-KDE" secondAttribute="centerX" id="6Zs-sR-0xC"/>
+                            <constraint firstItem="VOk-qf-KDE" firstAttribute="top" secondItem="fWO-Jn-9rn" secondAttribute="top" constant="15" id="PEa-lX-dL9"/>
+                            <constraint firstItem="VOk-qf-KDE" firstAttribute="centerX" secondItem="Lcs-8e-K8F" secondAttribute="centerX" id="Yaf-fc-S2M"/>
+                            <constraint firstItem="Ki1-cN-FUQ" firstAttribute="leading" secondItem="Lcs-8e-K8F" secondAttribute="leadingMargin" id="c13-TV-Ti4"/>
+                            <constraint firstItem="Ki1-cN-FUQ" firstAttribute="top" secondItem="VOk-qf-KDE" secondAttribute="bottom" constant="8" symbolic="YES" id="gpX-Uo-ska"/>
+                            <constraint firstItem="Ki1-cN-FUQ" firstAttribute="bottom" secondItem="fWO-Jn-9rn" secondAttribute="bottom" id="yDm-Qu-T4B"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fWO-Jn-9rn"/>
                     </view>
+                    <connections>
+                        <outlet property="localeSegments" destination="VOk-qf-KDE" id="AfV-aN-brb"/>
+                        <outlet property="sharedTextVIew" destination="Ee3-1R-1sd" id="Ma8-YC-86Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7O-mn-Id2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4592" y="-333"/>
+            <point key="canvasLocation" x="4591.304347826087" y="-333.48214285714283"/>
         </scene>
     </scenes>
 </document>
