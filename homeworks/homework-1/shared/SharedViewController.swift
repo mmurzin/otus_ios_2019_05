@@ -9,11 +9,12 @@
 import UIKit
 
 class SharedViewController: UIViewController {
+// Text for testing: 23/12/2001, 12/12/2012, 1000 м, 2345 м, 8918 метр, 5000 метров, 1000.5 м, 2500,5 м
     
 //
-//    1. Реализовать для приложения ShareExtension
-//    1.1 Настроить чтобы с любого сайта можно было выделить текст и отправить в приложение
-//    1.2 При получениии ревеста от ShareExtension в приложении показывать ViewController
+//    + 1. Реализовать для приложения ShareExtension
+//    + 1.1 Настроить чтобы с любого сайта можно было выделить текст и отправить в приложение
+//    + 1.2 При получениии ревеста от ShareExtension в приложении показывать ViewController
 //    + 2. В этом ViewController:
 //    + 2.1 Отображать Segmented Control переключения между локалями, например: английской(США), французской, китайской
 //    + 2.2 Под ним Label с пошаренным текстом
@@ -38,7 +39,7 @@ class SharedViewController: UIViewController {
         RegexpUnitItem(regex: #"[0-9]+(\.|\,)?[0-9]*\s*(метров|метр|м)"#, unit: UnitLength.meters)
     ]
     
-    var sharedText = "23/12/2001, 12/12/2012, 1000 м, 2345 м, 8918 метр, 5000 метров, 1000.5 м, 2500,5 м"
+    var sharedText = ""
     
     var locales = [Locale]()
     var datesInText = [Date]()

@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         print("\(#function)")
-        openSharedViewController()
     }
     
     //1.2
@@ -46,14 +45,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("\(#function)")
     }
     
-    private func openSharedViewController() {
+    private func openSharedViewController(text: String) {
         guard let rootController = self.window?.rootViewController else {
             print("rootViewController is nil")
             return
         }
         let storyboard = UIStoryboard(name: "Shared", bundle: nil)
         let sharedViewController = storyboard.instantiateViewController(withIdentifier: "SharedViewController")
+        if let controller = sharedViewController as? SharedViewController {
+            controller.sharedText = text
+        }
         rootController.present(sharedViewController, animated: false, completion: nil)
     }
+}
+
+extension AppDelegate {
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        if let ud = UserDefaults(suiteName: "group.otus.share") {
+            if let shareText = ud.object(forKey: "shareText") as? String {
+                openSharedViewController(text: shareText)
+            }
+        }
+        
+        return true
+        
+    }
+    
 }
 
