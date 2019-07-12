@@ -26,9 +26,10 @@ class SharedViewController: UIViewController {
 //    Наличие механизма шаринга - 20 баллов
 //    Переключение локалей на тексте - 30 баллов
     
-    var sharedText = ""
-    let searchRegexes = [#"\d{1,2}\/\d{1,2}\/\d{4}"#]
+    var sharedText = "23/12/2001, 12/12/2012"
+    let dateRegexes = [#"\d{1,2}\/\d{1,2}\/\d{4}"#]
     var locales = [Locale]()
+    let dateFormatter = DateFormatter()
     
 
     @IBOutlet weak var sharedTextVIew: UITextView!
@@ -42,13 +43,24 @@ class SharedViewController: UIViewController {
         super.viewDidLoad()
         sharedTextVIew.text = sharedText
         initLocales()
-        initLocaleSegmants()
+        initLocaleSegments()
         loadCurrentTabData()
+        searchItems()
     }
     
     func loadCurrentTabData() {
         let currentLocale = locales[localeSegments.selectedSegmentIndex]
-        print("currentLocale \(currentLocale)")
+        print("loadCurrentTabData: currentLocale \(currentLocale)")
+        
+    }
+    
+    func searchItems() {
+        var dates = [String]()
+        for regexp in dateRegexes {
+            dates.append(contentsOf: self.search(text: sharedText, regex: regexp))
+        }
+        print(dates)
+        print(getDate(foramt: "dd/MM/yyyy", date: dates[0]))
     }
     
     func initLocales() {
@@ -57,7 +69,7 @@ class SharedViewController: UIViewController {
         locales.append(Locale(identifier: "zh_CN"))
     }
     
-    func initLocaleSegmants() {
+    func initLocaleSegments() {
         localeSegments.removeAllSegments()
         for locale in locales {
             localeSegments.insertSegment(withTitle: locale.identifier, at: localeSegments.numberOfSegments, animated: false)
@@ -67,14 +79,21 @@ class SharedViewController: UIViewController {
     
     func search(text: String, regex: String) -> [String] {
         do {
-            let regex2 = try NSRegularExpression(pattern: regex)
-            let results = regex2.matches(in: text,
-                                         range: NSRange(text.startIndex..., in: text))
+            let regexItem = try NSRegularExpression(pattern: regex)
+            let results = regexItem.matches(in: text,
+                                            range: NSRange(text.startIndex..., in: text))
             return results.map { String(text[Range($0.range, in: text)!]) }
         }  catch let error {
-            print(error)
+            print("search error \(error)")
         }
         return [String]()
+    }
+    
+    func getDate(foramt:String, date:String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = foramt
+        dateFormatter.timeZone = TimeZone(identifier:"GMT")
+        return dateFormatter.date(from: date)
     }
 
 }
