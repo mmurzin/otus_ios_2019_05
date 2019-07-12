@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         print("\(#function)")
+        openSharedViewController()
     }
     
     //1.2
@@ -43,6 +44,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(_ application: UIApplication) {
         print("\(#function)")
+    }
+    
+    private func openSharedViewController() {
+        guard let rootController = self.window?.rootViewController else {
+            print("rootViewController is nil")
+            return
+        }
+        let storyboard = UIStoryboard(name: "Shared", bundle: nil)
+        let sharedViewController = storyboard.instantiateViewController(withIdentifier: "SharedViewController")
+        rootController.present(sharedViewController, animated: false, completion: nil)
     }
 }
 

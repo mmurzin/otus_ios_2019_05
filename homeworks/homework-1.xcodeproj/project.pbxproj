@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE06473A22D68E9F00FD7BEE /* Shared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE06473922D68E9F00FD7BEE /* Shared.storyboard */; };
+		CE06473C22D690B600FD7BEE /* SharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06473B22D690B600FD7BEE /* SharedViewController.swift */; };
 		CE1838EB22C36575007F2BE6 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1838EA22C36575007F2BE6 /* PieChart.swift */; };
 		CE36DF7322C94BCB00DAFA0E /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DF7222C94BCB00DAFA0E /* CGPoint.swift */; };
 		CE36DF7522C94C1500DAFA0E /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DF7422C94C1500DAFA0E /* CGRect.swift */; };
@@ -58,6 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE06473922D68E9F00FD7BEE /* Shared.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Shared.storyboard; sourceTree = "<group>"; };
+		CE06473B22D690B600FD7BEE /* SharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedViewController.swift; sourceTree = "<group>"; };
 		CE1838EA22C36575007F2BE6 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
 		CE36DF7222C94BCB00DAFA0E /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		CE36DF7422C94C1500DAFA0E /* CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
@@ -121,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE06473822D68E1500FD7BEE /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				CE06473922D68E9F00FD7BEE /* Shared.storyboard */,
+				CE06473B22D690B600FD7BEE /* SharedViewController.swift */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
 		CE36DF7122C94BB100DAFA0E /* extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +237,7 @@
 		CEA5BF8022A3E417001C2048 /* homework-1 */ = {
 			isa = PBXGroup;
 			children = (
+				CE06473822D68E1500FD7BEE /* shared */,
 				CE36DFA922C95CD800DAFA0E /* dataStructures */,
 				CE36DFA322C9588C00DAFA0E /* services */,
 				CE36DF7122C94BB100DAFA0E /* extensions */,
@@ -360,6 +374,7 @@
 				CEA5BF8C22A3E418001C2048 /* LaunchScreen.storyboard in Resources */,
 				CEA5BF8922A3E418001C2048 /* Assets.xcassets in Resources */,
 				CE8F9DC922A44B2100D8F3B9 /* DetailScreen.storyboard in Resources */,
+				CE06473A22D68E9F00FD7BEE /* Shared.storyboard in Resources */,
 				CE8F9DC422A4479500D8F3B9 /* AvatarComponent.xib in Resources */,
 				CE36DFAB22C95D0100DAFA0E /* DataStructures.storyboard in Resources */,
 				CEA5BF8722A3E417001C2048 /* Main.storyboard in Resources */,
@@ -407,6 +422,7 @@
 				CEADCAAB22B6D3330090EED2 /* SessionSummaryViewController.swift in Sources */,
 				CE36DFD122C968F800DAFA0E /* AlgoProvider.swift in Sources */,
 				CE36DFDC22CB8F5900DAFA0E /* InverseSuffixIterator.swift in Sources */,
+				CE06473C22D690B600FD7BEE /* SharedViewController.swift in Sources */,
 				CE8F9DF122AD0CE100D8F3B9 /* BenchmarkViewController.swift in Sources */,
 				CE36DFBB22C960E200DAFA0E /* SwiftDictionaryManipulator.swift in Sources */,
 				CEADCAA922B6D0B40090EED2 /* FeedViewController.swift in Sources */,
