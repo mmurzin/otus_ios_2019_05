@@ -27,25 +27,23 @@ class SharedViewController: UIViewController {
 //    Наличие механизма шаринга - 20 баллов
 //    Переключение локалей на тексте - 30 баллов
     
-    typealias RegexpUnitItem = (regex: String, unit: UnitLength)
+    
     
     @IBOutlet weak var resultsTableView: UITableView!
     @IBOutlet weak var sharedTextVIew: UITextView!
     @IBOutlet weak var localeSegments: UISegmentedControl!
     
-    
-    let dateRegex = #"\d{1,2}\/\d{1,2}\/\d{4}"#
-    let lengthRegexItems = [
-        RegexpUnitItem(regex: #"[0-9]+(\.|\,)?[0-9]*\s*(метров|метр|м)"#, unit: UnitLength.meters)
-    ]
-    
-    var sharedText = ""
+    var sharedText = "23/12/2001, 12/12/2012, 1000 м, 2345 м, 8918 метр, 5000 метров, 1000.5 м, 2500,5 м"
     
     var locales = [Locale]()
     var datesInText = [Date]()
     var measurementInText = [Measurement]()
     
     var resultItems = [String]()
+    
+    
+    private let datesSearcher = DatesSearcher()
+    private let unitsSearcher = UnitsSearcher()
     
     @IBAction func segmentedIndexChanged(_ sender: Any) {
         loadCurrentTabData()
@@ -56,116 +54,46 @@ class SharedViewController: UIViewController {
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "SplitViewController")
         present(mainViewController, animated: true, completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeViews()
-        searchDateItems()
-        searchLengthItems()
+        datesInText = datesSearcher.search(text: sharedText)
+        measurementInText = unitsSearcher.search(text: sharedText)
         loadCurrentTabData()
     }
     
-    func initializeViews() {
+    private func initializeViews() {
         sharedTextVIew.text = sharedText
         initLocales()
         initLocaleSegments()
     }
     
-    func loadCurrentTabData() {
+    private func loadCurrentTabData() {
         let currentLocale = locales[localeSegments.selectedSegmentIndex]
+        let localizator = Localizator(locale: currentLocale)
+        
         resultItems.removeAll()
-        resultItems.append(contentsOf: getTimeItemsWithLocale(locale: currentLocale))
-        resultItems.append(contentsOf: getLengthItemsWithLocale(locale: currentLocale))
+        resultItems.append(contentsOf:
+            localizator.localizeDates(dates: datesInText))
+        resultItems.append(contentsOf:
+            localizator.localizeUnits(mesaurments: measurementInText))
         resultsTableView.reloadData()
     }
     
-    func searchDateItems() {
-        var dates = [String]()
-        dates.append(contentsOf: self.search(text: sharedText, regex: dateRegex))
-        
-        for dateString in dates {
-            if let date = getDate(foramt: "dd/MM/yyyy", date: dateString) {
-                datesInText.append(date)
-            }
-        }
-    }
-    
-    
-    func searchLengthItems() {
-        for regexpItem in lengthRegexItems {
-            let foundItems = self.search(text: sharedText, regex: regexpItem.regex)
-            for lengthItem in foundItems {
-                var digit = lengthItem.trimmingCharacters(in: CharacterSet(charactersIn: "01234567890.,").inverted)
-                digit = digit.replacingOccurrences(of: ",", with: ".")
-                if let unitValue = Double(digit) {
-                    measurementInText.append(Measurement(value: unitValue, unit: regexpItem.unit))
-                } else {
-                    print("Invalid value \(digit)")
-                }
-            }
-        }
-        print(measurementInText)
-    }
-    
-    func initLocales() {
+    private func initLocales() {
         locales.append(Locale(identifier: "ru-RU"))
         locales.append(Locale(identifier: "en"))
         locales.append(Locale(identifier: "fr"))
         locales.append(Locale(identifier: "zh_CN"))
     }
     
-    func initLocaleSegments() {
+    private func initLocaleSegments() {
         localeSegments.removeAllSegments()
         for locale in locales {
             localeSegments.insertSegment(withTitle: locale.identifier, at: localeSegments.numberOfSegments, animated: false)
         }
         localeSegments.selectedSegmentIndex = 0
-    }
-    
-    func search(text: String, regex: String) -> [String] {
-        do {
-            let regexItem = try NSRegularExpression(pattern: regex)
-            let results = regexItem.matches(in: text,
-                                            range: NSRange(text.startIndex..., in: text))
-            return results.map {
-                String(text[Range($0.range, in: text)!])
-            }
-        }  catch let error {
-            print("search error \(error)")
-        }
-        return [String]()
-    }
-    
-    func getDate(foramt:String, date:String) -> Date? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = foramt
-        dateFormatter.timeZone = TimeZone(identifier:"GMT")
-        return dateFormatter.date(from: date)
-    }
-    
-    func getTimeItemsWithLocale(locale:Locale) -> [String] {
-        let dateFormatter = DateFormatter()
-        let dateTemplate = "dMMMMyEEEE"
-        
-        var dates = [String]()
-        dateFormatter.setLocalizedDateFormatFromTemplate(dateTemplate)
-        dateFormatter.locale = locale
-        
-        for date in datesInText {
-            dates.append(dateFormatter.string(from: date))
-        }
-        
-        return dates
-    }
-    
-    func getLengthItemsWithLocale(locale:Locale) -> [String] {
-        var items = [String]()
-        let measurementFormatter = MeasurementFormatter()
-        measurementFormatter.locale = locale
-        
-        for measurement in measurementInText {
-            items.append(measurementFormatter.string(from: measurement))
-        }
-        return items
     }
 
 }
