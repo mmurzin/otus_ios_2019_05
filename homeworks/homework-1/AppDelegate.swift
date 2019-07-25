@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Shared", bundle: nil)
         let sharedViewController = storyboard.instantiateViewController(withIdentifier: "SharedViewController")
         if let controller = sharedViewController as? SharedViewController {
-            //controller.sharedText = text
+            controller.sharedText = text
         }
         rootController.present(sharedViewController, animated: false, completion: nil)
     }

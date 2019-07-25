@@ -33,7 +33,7 @@ class SharedViewController: UIViewController {
     @IBOutlet weak var sharedTextVIew: UITextView!
     @IBOutlet weak var localeSegments: UISegmentedControl!
     
-    var sharedText = "23/12/2001, 12/12/2012, 1000 м, 2345 м, 8918 метр, 5000 метров, 1000.5 м, 2500,5 м"
+    var sharedText = ""
     
     var locales = [Locale]()
     var datesInText = [Date]()
