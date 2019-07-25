@@ -35,7 +35,6 @@ class DictionaryViewController: DataStructuresViewController {
     var remove10EntriesTime: TimeInterval = 0
     var lookup1EntryTime: TimeInterval = 0
     var lookup10EntriesTime: TimeInterval = 0
-    
     //MARK: - Methods
     
     //MARK: View lifecycle

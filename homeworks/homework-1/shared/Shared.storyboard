@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dTR-cI-06R">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shared View Controller-->
+        <scene sceneID="JWY-hi-oyU">
+            <objects>
+                <viewController storyboardIdentifier="SharedViewController" id="dTR-cI-06R" customClass="SharedViewController" customModule="homework_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lcs-8e-K8F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VOk-qf-KDE">
+                                <rect key="frame" x="126.5" y="59" width="161" height="29"/>
+                                <segments>
+                                    <segment title="eng"/>
+                                    <segment title="fr"/>
+                                    <segment title="zh_CN"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedIndexChanged:" destination="dTR-cI-06R" eventType="valueChanged" id="Sfm-4h-obM"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ki1-cN-FUQ">
+                                <rect key="frame" x="20" y="95" width="374" height="767"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ee3-1R-1sd">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="383.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Asm-Dt-pct">
+                                        <rect key="frame" x="0.0" y="383.5" width="374" height="383.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableCell" textLabel="8OA-03-bus" style="IBUITableViewCellStyleDefault" id="kZk-xg-RnW">
+                                                <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kZk-xg-RnW" id="GH4-dw-rp4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8OA-03-bus">
+                                                            <rect key="frame" x="20" y="0.0" width="334" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="dTR-cI-06R" id="BFK-KJ-eeH"/>
+                                            <outlet property="delegate" destination="dTR-cI-06R" id="dV1-sg-HSZ"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZB-dX-afp">
+                                <rect key="frame" x="5" y="54" width="30" height="30"/>
+                                <state key="normal" title="&lt;"/>
+                                <connections>
+                                    <action selector="homeButtonClicked:" destination="dTR-cI-06R" eventType="touchUpInside" id="bu7-vN-zGV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ki1-cN-FUQ" firstAttribute="centerX" secondItem="VOk-qf-KDE" secondAttribute="centerX" id="6Zs-sR-0xC"/>
+                            <constraint firstItem="TZB-dX-afp" firstAttribute="top" secondItem="fWO-Jn-9rn" secondAttribute="top" constant="10" id="FXX-2g-K1N"/>
+                            <constraint firstItem="VOk-qf-KDE" firstAttribute="top" secondItem="fWO-Jn-9rn" secondAttribute="top" constant="15" id="PEa-lX-dL9"/>
+                            <constraint firstItem="TZB-dX-afp" firstAttribute="leading" secondItem="fWO-Jn-9rn" secondAttribute="leading" constant="5" id="Tkc-Yz-QJM"/>
+                            <constraint firstItem="VOk-qf-KDE" firstAttribute="centerX" secondItem="Lcs-8e-K8F" secondAttribute="centerX" id="Yaf-fc-S2M"/>
+                            <constraint firstItem="Ki1-cN-FUQ" firstAttribute="leading" secondItem="Lcs-8e-K8F" secondAttribute="leadingMargin" id="c13-TV-Ti4"/>
+                            <constraint firstItem="Ki1-cN-FUQ" firstAttribute="top" secondItem="VOk-qf-KDE" secondAttribute="bottom" constant="8" symbolic="YES" id="gpX-Uo-ska"/>
+                            <constraint firstItem="Ki1-cN-FUQ" firstAttribute="bottom" secondItem="fWO-Jn-9rn" secondAttribute="bottom" id="yDm-Qu-T4B"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fWO-Jn-9rn"/>
+                    </view>
+                    <connections>
+                        <outlet property="localeSegments" destination="VOk-qf-KDE" id="AfV-aN-brb"/>
+                        <outlet property="resultsTableView" destination="Asm-Dt-pct" id="j2r-7S-daP"/>
+                        <outlet property="sharedTextVIew" destination="Ee3-1R-1sd" id="Ma8-YC-86Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J7O-mn-Id2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4591.304347826087" y="-333.48214285714283"/>
+        </scene>
+    </scenes>
+</document>

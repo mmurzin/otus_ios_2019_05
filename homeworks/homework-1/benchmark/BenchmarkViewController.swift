@@ -77,8 +77,7 @@ extension BenchmarkViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "timerViewCell",
-                                                         for: indexPath) as? TimerViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "timerViewCell", for: indexPath) as? TimerViewCell {
             cell.timerItem = timers[indexPath.row]
             cell.updatePieChart()
             

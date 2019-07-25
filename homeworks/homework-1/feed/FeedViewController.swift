@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -29,7 +29,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return searchController.isActive && !isSearchBarEmpty
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchController.searchResultsUpdater = self
@@ -45,6 +44,20 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let time = suffixArrayManipulator.setupWithObjects(items:dataItems, reverse:true)
         print("freeze time \(time)")
     }
+ 
+}
+
+extension FeedViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let query: String = searchController.searchBar.text else {
+            return
+        }
+        filteterdDataItems = suffixArrayManipulator.searchAlgoName(query: query)
+        tableView.reloadData()
+    }
+}
+
+extension FeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return isFiltered ? filteterdDataItems.count : dataItems.count
@@ -55,6 +68,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.textLabel?.text = isFiltered ? filteterdDataItems[indexPath.row] : dataItems[indexPath.row]
         return cell
     }
+}
+
+extension FeedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "DataStructures", bundle: nil)
@@ -62,32 +78,21 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var viewController:UIViewController?
         
         switch name {
-            case "Array":
-                viewController = storyboard.instantiateViewController(withIdentifier: "ArrayViewController")
-            case "Set":
-                viewController = storyboard.instantiateViewController(withIdentifier: "SetViewController")
-            case "Dictionary":
-                viewController = storyboard.instantiateViewController(withIdentifier: "DictionaryViewController")
-            case "SuffixArray":
-                viewController = storyboard.instantiateViewController(withIdentifier: "SuffixArrayViewController")
-            default:
-                print("viewController by \(name) not found")
+        case "Array":
+            viewController = storyboard.instantiateViewController(withIdentifier: "ArrayViewController")
+        case "Set":
+            viewController = storyboard.instantiateViewController(withIdentifier: "SetViewController")
+        case "Dictionary":
+            viewController = storyboard.instantiateViewController(withIdentifier: "DictionaryViewController")
+        case "SuffixArray":
+            viewController = storyboard.instantiateViewController(withIdentifier: "SuffixArrayViewController")
+        default:
+            print("viewController by \(name) not found")
         }
         
         if let pushViewController = viewController {
             self.navigationController?.pushViewController(pushViewController, animated: true)
         }
         tableView.deselectRow(at: indexPath, animated: false)
-        
-    }
-}
-
-extension FeedViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let query: String = searchController.searchBar.text else {
-            return
-        }
-        filteterdDataItems = suffixArrayManipulator.searchAlgoName(query: query)
-        tableView.reloadData()
     }
 }

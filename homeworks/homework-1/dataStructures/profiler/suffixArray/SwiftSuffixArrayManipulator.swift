@@ -64,13 +64,11 @@ class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
         for word in items {
             if(reverse) {
                 for suffix in InverseSuffixSequence(string: word) {
-                    print("create suffix = \(suffix)")
                     suffixArray
                         .append((suffix: String(suffix), algoName: word))
                 }
             } else {
                 for suffix in SuffixSequence(string: word) {
-                    print("create suffix = \(suffix)")
                     suffixArray
                         .append((suffix: String(suffix), algoName: word))
                 }
