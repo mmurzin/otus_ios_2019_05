@@ -1,0 +1,6 @@
+framework module OtusUIComponents {
+  umbrella header "OtusUIComponents-umbrella.h"
+
+  export *
+  module * { export * }
+}
