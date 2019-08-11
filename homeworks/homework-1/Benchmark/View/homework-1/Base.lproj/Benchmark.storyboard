@@ -49,7 +49,7 @@
                                                         <constraint firstAttribute="height" constant="60" id="yzG-Yn-c8F"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ire-me-3dK" customClass="PieChart" customModule="homework_1" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ire-me-3dK" customClass="PieChart" customModule="OtusUIComponents">
                                                     <rect key="frame" x="243" y="70" width="60" height="60"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -69,7 +69,7 @@
                                             <constraint firstItem="U7P-kC-G8Q" firstAttribute="leading" secondItem="x03-Wp-Ged" secondAttribute="leading" constant="20" id="0I2-PN-81r"/>
                                             <constraint firstAttribute="bottom" secondItem="Jen-Vp-VIM" secondAttribute="bottom" constant="20" id="7Ng-CY-evf"/>
                                             <constraint firstItem="U7P-kC-G8Q" firstAttribute="top" secondItem="x03-Wp-Ged" secondAttribute="top" constant="20" id="9BE-Ua-QxU"/>
-                                            <constraint firstItem="eFJ-CP-yxX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="U7P-kC-G8Q" secondAttribute="trailing" symbolic="YES" id="LvF-uI-qMZ"/>
+                                            <constraint firstItem="eFJ-CP-yxX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="U7P-kC-G8Q" secondAttribute="trailing" constant="8" symbolic="YES" id="LvF-uI-qMZ"/>
                                             <constraint firstItem="eFJ-CP-yxX" firstAttribute="top" secondItem="x03-Wp-Ged" secondAttribute="top" constant="20" id="PHl-fP-6ME"/>
                                             <constraint firstAttribute="trailing" secondItem="eFJ-CP-yxX" secondAttribute="trailing" constant="56" id="Uz7-4i-5jM"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jen-Vp-VIM" secondAttribute="trailing" symbolic="YES" id="otw-tS-kxY"/>

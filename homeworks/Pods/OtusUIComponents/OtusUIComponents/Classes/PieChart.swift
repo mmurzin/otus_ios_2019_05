@@ -8,26 +8,36 @@
 
 import UIKit
 
-struct Segment {
+public class Segment {
     let color: UIColor
     let value: CGFloat
     let label: String
     let labelColor: UIColor
+    
+    public init(color: UIColor,
+                value: CGFloat,
+                label:String,
+                labelColor: UIColor) {
+        self.color = color
+        self.value = value
+        self.label = label
+        self.labelColor = labelColor
+    }
 }
 
-class PieChart: UIView {
+public class PieChart: UIView {
     
-    var segments: [Segment] = []{
+    public var segments: [Segment] = []{
         didSet {
             setNeedsDisplay()
         }
     }
     
-    override func prepareForInterfaceBuilder() {
+    override public func prepareForInterfaceBuilder() {
         setNeedsDisplay()
     }
     
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         guard let contex = UIGraphicsGetCurrentContext() else {
             return
         }
@@ -60,7 +70,7 @@ class PieChart: UIView {
         }
     }
     
-    func setSize(width: CGFloat, height: CGFloat) {
+    public func setSize(width: CGFloat, height: CGFloat) {
         heightConstraint?.constant = height
         widthConstraint?.constant = width
     }
