@@ -12,18 +12,18 @@ class FeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let searchController = UISearchController(searchResultsController: nil)
+    let searchController = UISearchController(searchResultsController: nil)
     
-    private lazy var viewModel = FeedViewModel()
+    lazy var viewModel = FeedViewModel()
     
-    private var isSearchBarEmpty: Bool {
+    var isSearchBarEmpty: Bool {
         guard let query = searchController.searchBar.text else {
             return true
         }
         return query.isEmpty
     }
     
-    private var isFiltered: Bool {
+    var isFiltered: Bool {
         return searchController.isActive && !isSearchBarEmpty
     }
     
@@ -47,54 +47,4 @@ class FeedViewController: UIViewController {
         }
     }
  
-}
-
-extension FeedViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let query: String = searchController.searchBar.text else {
-            return
-        }
-        viewModel.search(query: query)
-    }
-}
-
-extension FeedViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isFiltered ?  viewModel.filteterdDataItems.count :  viewModel.dataItems.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath)
-        cell.textLabel?.text = isFiltered ?  viewModel.filteterdDataItems[indexPath.row] :  viewModel.dataItems[indexPath.row]
-        
-        return cell
-    }
-}
-
-extension FeedViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "DataStructures", bundle: nil)
-        let name =  viewModel.dataItems[indexPath.row]
-        var viewController:UIViewController?
-        
-        switch name {
-        case "Array":
-            viewController = storyboard.instantiateViewController(withIdentifier: "ArrayViewController")
-        case "Set":
-            viewController = storyboard.instantiateViewController(withIdentifier: "SetViewController")
-        case "Dictionary":
-            viewController = storyboard.instantiateViewController(withIdentifier: "DictionaryViewController")
-        case "SuffixArray":
-            viewController = storyboard.instantiateViewController(withIdentifier: "SuffixArrayViewController")
-        default:
-            print("viewController by \(name) not found")
-        }
-        
-        if let pushViewController = viewController {
-            self.navigationController?.pushViewController(pushViewController, animated: true)
-        }
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
 }

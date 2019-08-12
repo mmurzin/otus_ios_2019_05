@@ -35,6 +35,9 @@
 		CE36DFDA22CB33E200DAFA0E /* SuffixSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFD922CB33E200DAFA0E /* SuffixSequence.swift */; };
 		CE36DFDC22CB8F5900DAFA0E /* InverseSuffixIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFDB22CB8F5900DAFA0E /* InverseSuffixIterator.swift */; };
 		CE7B31DE23015DF600B3A8F5 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B31DD23015DF600B3A8F5 /* FeedViewModel.swift */; };
+		CE7B31E3230179F300B3A8F5 /* Extension-UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B31E2230179F300B3A8F5 /* Extension-UITableViewDelegate.swift */; };
+		CE7B31E523017A1C00B3A8F5 /* Extension-UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B31E423017A1C00B3A8F5 /* Extension-UITableViewDataSource.swift */; };
+		CE7B31E723017AAF00B3A8F5 /* Extension-UISearchResultsUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B31E623017AAF00B3A8F5 /* Extension-UISearchResultsUpdating.swift */; };
 		CE8EEAEC22E7A52D00612493 /* Searcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EEAEB22E7A52D00612493 /* Searcher.swift */; };
 		CE8EEAEE22E988F300612493 /* Localizator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EEAED22E988F300612493 /* Localizator.swift */; };
 		CE8F9DC422A4479500D8F3B9 /* AvatarComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8F9DC322A4479500D8F3B9 /* AvatarComponent.xib */; };
@@ -136,6 +139,9 @@
 		CE36DFD922CB33E200DAFA0E /* SuffixSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixSequence.swift; sourceTree = "<group>"; };
 		CE36DFDB22CB8F5900DAFA0E /* InverseSuffixIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InverseSuffixIterator.swift; sourceTree = "<group>"; };
 		CE7B31DD23015DF600B3A8F5 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		CE7B31E2230179F300B3A8F5 /* Extension-UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		CE7B31E423017A1C00B3A8F5 /* Extension-UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		CE7B31E623017AAF00B3A8F5 /* Extension-UISearchResultsUpdating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-UISearchResultsUpdating.swift"; sourceTree = "<group>"; };
 		CE8EEAEB22E7A52D00612493 /* Searcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searcher.swift; sourceTree = "<group>"; };
 		CE8EEAED22E988F300612493 /* Localizator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizator.swift; sourceTree = "<group>"; };
 		CE8F9DC322A4479500D8F3B9 /* AvatarComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarComponent.xib; sourceTree = "<group>"; };
@@ -294,6 +300,9 @@
 			children = (
 				CEADCAAA22B6D3330090EED2 /* SessionSummaryViewController.swift */,
 				CEADCAA822B6D0B40090EED2 /* FeedViewController.swift */,
+				CE7B31E2230179F300B3A8F5 /* Extension-UITableViewDelegate.swift */,
+				CE7B31E423017A1C00B3A8F5 /* Extension-UITableViewDataSource.swift */,
+				CE7B31E623017AAF00B3A8F5 /* Extension-UISearchResultsUpdating.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -804,10 +813,12 @@
 				CE36DFAD22C95E4600DAFA0E /* DataStructuresViewController.swift in Sources */,
 				CE36DFAF22C95E8100DAFA0E /* ArrayViewController.swift in Sources */,
 				CEA1ACD922E30119009801CD /* UnitsSearcher.swift in Sources */,
+				CE7B31E523017A1C00B3A8F5 /* Extension-UITableViewDataSource.swift in Sources */,
 				CE36DFCD22C9679100DAFA0E /* SuffixArrayManipulator.swift in Sources */,
 				CEF0C3B322EB34B2003C0A7B /* SharedViewController-UITableViewDataSource.swift in Sources */,
 				CE36DFD322C96A7300DAFA0E /* SuffixArrayViewController.swift in Sources */,
 				CEFB803B22FCD06200968CB8 /* DataStructuresViewController-UITableViewDataSource.swift in Sources */,
+				CE7B31E3230179F300B3A8F5 /* Extension-UITableViewDelegate.swift in Sources */,
 				CE8F9DFA22AD1C4000D8F3B9 /* ChangeColorBehavior.swift in Sources */,
 				CEADCA5E22B4C9AE0090EED2 /* TabBarViewController.swift in Sources */,
 				CEFB803922FCC97600968CB8 /* SuffixArrayViewModel.swift in Sources */,
@@ -832,6 +843,7 @@
 				CE36DFD122C968F800DAFA0E /* AlgoProvider.swift in Sources */,
 				CE36DFDC22CB8F5900DAFA0E /* InverseSuffixIterator.swift in Sources */,
 				CE06473C22D690B600FD7BEE /* SharedViewController.swift in Sources */,
+				CE7B31E723017AAF00B3A8F5 /* Extension-UISearchResultsUpdating.swift in Sources */,
 				CE8F9DF122AD0CE100D8F3B9 /* BenchmarkViewController.swift in Sources */,
 				CE36DFBB22C960E200DAFA0E /* SwiftDictionaryManipulator.swift in Sources */,
 				CEADCAA922B6D0B40090EED2 /* FeedViewController.swift in Sources */,
