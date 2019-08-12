@@ -34,6 +34,7 @@
 		CE36DFD322C96A7300DAFA0E /* SuffixArrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFD222C96A7300DAFA0E /* SuffixArrayViewController.swift */; };
 		CE36DFDA22CB33E200DAFA0E /* SuffixSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFD922CB33E200DAFA0E /* SuffixSequence.swift */; };
 		CE36DFDC22CB8F5900DAFA0E /* InverseSuffixIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFDB22CB8F5900DAFA0E /* InverseSuffixIterator.swift */; };
+		CE7B31DE23015DF600B3A8F5 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B31DD23015DF600B3A8F5 /* FeedViewModel.swift */; };
 		CE8EEAEC22E7A52D00612493 /* Searcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EEAEB22E7A52D00612493 /* Searcher.swift */; };
 		CE8EEAEE22E988F300612493 /* Localizator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EEAED22E988F300612493 /* Localizator.swift */; };
 		CE8F9DC422A4479500D8F3B9 /* AvatarComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8F9DC322A4479500D8F3B9 /* AvatarComponent.xib */; };
@@ -134,6 +135,7 @@
 		CE36DFD222C96A7300DAFA0E /* SuffixArrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixArrayViewController.swift; sourceTree = "<group>"; };
 		CE36DFD922CB33E200DAFA0E /* SuffixSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixSequence.swift; sourceTree = "<group>"; };
 		CE36DFDB22CB8F5900DAFA0E /* InverseSuffixIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InverseSuffixIterator.swift; sourceTree = "<group>"; };
+		CE7B31DD23015DF600B3A8F5 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		CE8EEAEB22E7A52D00612493 /* Searcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searcher.swift; sourceTree = "<group>"; };
 		CE8EEAED22E988F300612493 /* Localizator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizator.swift; sourceTree = "<group>"; };
 		CE8F9DC322A4479500D8F3B9 /* AvatarComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarComponent.xib; sourceTree = "<group>"; };
@@ -287,6 +289,31 @@
 			path = suffixArray;
 			sourceTree = "<group>";
 		};
+		CE7B31DB23015CF200B3A8F5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEADCAAA22B6D3330090EED2 /* SessionSummaryViewController.swift */,
+				CEADCAA822B6D0B40090EED2 /* FeedViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CE7B31DC23015D2300B3A8F5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE7B31DD23015DF600B3A8F5 /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CE7B31DF230170E200B3A8F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CEA5BF7522A3E417001C2048 = {
 			isa = PBXGroup;
 			children = (
@@ -330,10 +357,10 @@
 		CEADCA9F22B697C10090EED2 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				CE7B31DF230170E200B3A8F5 /* Model */,
+				CE7B31DC23015D2300B3A8F5 /* ViewModel */,
+				CE7B31DB23015CF200B3A8F5 /* ViewController */,
 				CEF0C3A422EB286E003C0A7B /* View */,
-				CEADCAA822B6D0B40090EED2 /* FeedViewController.swift */,
-				CEADCAAA22B6D3330090EED2 /* SessionSummaryViewController.swift */,
-				CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -763,6 +790,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7B31DE23015DF600B3A8F5 /* FeedViewModel.swift in Sources */,
 				CE36DFC222C963F400DAFA0E /* SetManipulator.swift in Sources */,
 				CEF440CF22F715ED00761DF1 /* BenchmarkViewController-UICollectionViewDataSource.swift in Sources */,
 				CE36DFBF22C9612800DAFA0E /* DictionaryViewController.swift in Sources */,

@@ -32,6 +32,7 @@ class BenchmarkViewModel {
     }
     
     func unBind() {
+        
         self.binder = nil
         initTimers()
     }

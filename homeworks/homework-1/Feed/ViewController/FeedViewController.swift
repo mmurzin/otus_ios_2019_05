@@ -13,10 +13,8 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private let searchController = UISearchController(searchResultsController: nil)
-    private let suffixArrayManipulator: SuffixArrayManipulator = SwiftSuffixArrayManipulator()
     
-    private var dataItems:[String] = Services.feedProvider.feedData()
-    private var filteterdDataItems:[String] = []
+    private lazy var viewModel = FeedViewModel()
     
     private var isSearchBarEmpty: Bool {
         guard let query = searchController.searchBar.text else {
@@ -36,13 +34,17 @@ class FeedViewController: UIViewController {
         searchController.searchBar.placeholder = "Search Algorithm"
         navigationItem.searchController = searchController
         definesPresentationContext = true
-        initSearching()
-    }
-    
-    func initSearching() {
-        dataItems.append(contentsOf: Services.algoProvider.all)
-        let time = suffixArrayManipulator.setupWithObjects(items:dataItems, reverse:true)
-        print("freeze time \(time)")
+        
+        viewModel.bind{[unowned self] (state) in
+            switch(state){
+            case .result:
+                print("result")
+                self.tableView.reloadData()
+                break
+            default:
+                break
+            }
+        }
     }
  
 }
@@ -52,20 +54,20 @@ extension FeedViewController: UISearchResultsUpdating {
         guard let query: String = searchController.searchBar.text else {
             return
         }
-        filteterdDataItems = suffixArrayManipulator.searchAlgoName(query: query)
-        tableView.reloadData()
+        viewModel.search(query: query)
     }
 }
 
 extension FeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isFiltered ? filteterdDataItems.count : dataItems.count
+        return isFiltered ?  viewModel.filteterdDataItems.count :  viewModel.dataItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath)
-        cell.textLabel?.text = isFiltered ? filteterdDataItems[indexPath.row] : dataItems[indexPath.row]
+        cell.textLabel?.text = isFiltered ?  viewModel.filteterdDataItems[indexPath.row] :  viewModel.dataItems[indexPath.row]
+        
         return cell
     }
 }
@@ -74,7 +76,7 @@ extension FeedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "DataStructures", bundle: nil)
-        let name = dataItems[indexPath.row]
+        let name =  viewModel.dataItems[indexPath.row]
         var viewController:UIViewController?
         
         switch name {
