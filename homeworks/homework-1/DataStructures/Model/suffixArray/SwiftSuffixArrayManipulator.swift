@@ -32,7 +32,6 @@ class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
         let time = Profiler.runClosureForTime() {
             self.algoSuffixArray = self.createSuffixArray(items: items, reverse: reverse)
         }
-        print("creation \(time)")
         return time
     }
     
@@ -41,10 +40,8 @@ class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
             let words = self.randomizeWords(size: count, wordSize: wordSize)
             for word in words {
                 let result = self.search(query: word, suffixArray: self.algoSuffixArray)
-                print(result)
             }
         }
-        print("search \(time)")
         return time
     }
     
@@ -86,7 +83,6 @@ class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
         var isPrefixGroupFounded = false
         for item in suffixArray {
             if(queryPrefix == item.suffix.prefix(1)){
-                print("suffix = \(item.suffix)")
                 isPrefixGroupFounded = true
             }
             

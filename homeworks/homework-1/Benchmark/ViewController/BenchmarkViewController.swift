@@ -13,27 +13,33 @@ class BenchmarkViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBAction func autoUploadToggled(_ sender: UISwitch) {
         if sender.isOn {
-            viewModel.isAutoUpdateChart = true
+            viewModel?.isAutoUpdateChart = true
         } else {
-            viewModel.isAutoUpdateChart = false
+            viewModel?.isAutoUpdateChart = false
         }
     }
     
-    var viewModel = BenchmarkViewModel()
+    var viewModel:BenchmarkViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.viewModel = BenchmarkViewModel(
+            provider: ServiceLocator.shared.getService()
+        )
         setupCollectionCellWidth()
         setupSwitch()
         
-        viewModel.bind{[unowned self] (state) in
+        guard let vm = viewModel else {
+            print("BenchmarkViewModel is nil")
+            return
+        }
+        vm.bind{[unowned self] (state) in
             switch(state){
             case .idle:
                 self.collectionView.reloadData()
                 break
             case .result:
-                self.updateCell(IndexPath(row: self.viewModel.updatedRow, section: 0))
+                self.updateCell(IndexPath(row: vm.updatedRow, section: 0))
                 break
             default:
                 break
@@ -44,7 +50,7 @@ class BenchmarkViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        viewModel.unBind()
+        viewModel?.unBind()
     }
     
     private func setupCollectionCellWidth() {
@@ -59,8 +65,8 @@ class BenchmarkViewController: UIViewController {
     private func updateCell(_ indexPath:IndexPath? ) {
         guard let path = indexPath else { return }
         if let cellView = collectionView.cellForItem(at: path) as? TimerViewCell {
-            cellView.timerItem = viewModel.timers[path.row]
-            if(viewModel.isAutoUpdateChart) {
+            cellView.timerItem = viewModel?.timers[path.row]
+            if(viewModel?.isAutoUpdateChart ?? false) {
                 cellView.updatePieChart()
             }
         }
@@ -68,7 +74,7 @@ class BenchmarkViewController: UIViewController {
     
     private func setupSwitch() {
         let updateSwitch = UISwitch(frame: .zero)
-        updateSwitch.isOn = self.viewModel.isAutoUpdateChart
+        updateSwitch.isOn = self.viewModel?.isAutoUpdateChart ?? false
         updateSwitch.addTarget(self, action: #selector(autoUploadToggled(_:)), for: .valueChanged)
         let switchItem = UIBarButtonItem(customView: updateSwitch)
         navigationItem.rightBarButtonItem = switchItem

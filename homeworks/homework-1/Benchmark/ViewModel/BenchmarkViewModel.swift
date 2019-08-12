@@ -10,8 +10,7 @@ import Foundation
 
 class BenchmarkViewModel {
     
-    let timersCount:Int
-    var timers:[TimerItem] = []
+    let timers:[TimerItem]
     var isAutoUpdateChart = true
     var updatedRow = 0
     
@@ -21,9 +20,14 @@ class BenchmarkViewModel {
     
     private var binder:((ViewModelState) -> ())? = nil
     
-    init(count:Int = 30) {
-        self.timersCount = count
-        initTimers()
+    init(provider:TimerItemsProvider?) {
+        if provider != nil {
+            self.timers = provider?.getTimersList() ?? [TimerItem]()
+        } else {
+            self.timers = [TimerItem]()
+            print("TimerItemsProvider error")
+        }
+        
     }
     
     func bind(_ binder: @escaping (ViewModelState) -> ()) {
@@ -33,7 +37,6 @@ class BenchmarkViewModel {
     
     func unBind() {
         self.binder = nil
-        initTimers()
     }
     
     func didSelectTimer(row: Int){
@@ -54,12 +57,6 @@ class BenchmarkViewModel {
     private func updateCell(row:Int) {
         self.updatedRow = row
         self.binder?(.result)
-    }
-    
-    private func initTimers() {
-        for _ in 0...self.timersCount {
-            timers.append(TimerItem())
-        }
     }
     
     private func initializeTickingTimer(){

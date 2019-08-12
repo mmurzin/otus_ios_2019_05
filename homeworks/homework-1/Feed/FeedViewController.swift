@@ -41,8 +41,7 @@ class FeedViewController: UIViewController {
     
     func initSearching() {
         dataItems.append(contentsOf: Services.algoProvider.all)
-        let time = suffixArrayManipulator.setupWithObjects(items:dataItems, reverse:true)
-        print("freeze time \(time)")
+        let _ = suffixArrayManipulator.setupWithObjects(items:dataItems, reverse:true)
     }
  
 }
