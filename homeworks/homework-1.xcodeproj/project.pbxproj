@@ -37,6 +37,10 @@
 		CE7B31D623014D1800B3A8F5 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B31D523014D1800B3A8F5 /* ServiceLocator.swift */; };
 		CE7B31D823014E2400B3A8F5 /* AlgorithmsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B31D723014E2400B3A8F5 /* AlgorithmsService.swift */; };
 		CE7B31DA2301516700B3A8F5 /* TimerItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B31D92301516700B3A8F5 /* TimerItemsService.swift */; };
+		CE7B31EE2301965100B3A8F5 /* Extension-UISearchResultsUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B31EB2301965100B3A8F5 /* Extension-UISearchResultsUpdating.swift */; };
+		CE7B31EF2301965100B3A8F5 /* Extension-UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B31EC2301965100B3A8F5 /* Extension-UITableViewDataSource.swift */; };
+		CE7B31F02301965100B3A8F5 /* Extension-UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B31ED2301965100B3A8F5 /* Extension-UITableViewDelegate.swift */; };
+		CE7B31F22301965E00B3A8F5 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B31F12301965E00B3A8F5 /* FeedViewModel.swift */; };
 		CE8EEAEC22E7A52D00612493 /* Searcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EEAEB22E7A52D00612493 /* Searcher.swift */; };
 		CE8EEAEE22E988F300612493 /* Localizator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8EEAED22E988F300612493 /* Localizator.swift */; };
 		CE8F9DC422A4479500D8F3B9 /* AvatarComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8F9DC322A4479500D8F3B9 /* AvatarComponent.xib */; };
@@ -140,6 +144,10 @@
 		CE7B31D523014D1800B3A8F5 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		CE7B31D723014E2400B3A8F5 /* AlgorithmsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsService.swift; sourceTree = "<group>"; };
 		CE7B31D92301516700B3A8F5 /* TimerItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerItemsService.swift; sourceTree = "<group>"; };
+		CE7B31EB2301965100B3A8F5 /* Extension-UISearchResultsUpdating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension-UISearchResultsUpdating.swift"; sourceTree = "<group>"; };
+		CE7B31EC2301965100B3A8F5 /* Extension-UITableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension-UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		CE7B31ED2301965100B3A8F5 /* Extension-UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension-UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		CE7B31F12301965E00B3A8F5 /* FeedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		CE8EEAEB22E7A52D00612493 /* Searcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searcher.swift; sourceTree = "<group>"; };
 		CE8EEAED22E988F300612493 /* Localizator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizator.swift; sourceTree = "<group>"; };
 		CE8F9DC322A4479500D8F3B9 /* AvatarComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarComponent.xib; sourceTree = "<group>"; };
@@ -303,6 +311,34 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		CE7B31E8230190D800B3A8F5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE7B31EB2301965100B3A8F5 /* Extension-UISearchResultsUpdating.swift */,
+				CE7B31EC2301965100B3A8F5 /* Extension-UITableViewDataSource.swift */,
+				CE7B31ED2301965100B3A8F5 /* Extension-UITableViewDelegate.swift */,
+				CEADCAA822B6D0B40090EED2 /* FeedViewController.swift */,
+				CEADCAAA22B6D3330090EED2 /* SessionSummaryViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CE7B31E9230190EF00B3A8F5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE7B31F12301965E00B3A8F5 /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CE7B31EA230190F900B3A8F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CEA5BF7522A3E417001C2048 = {
 			isa = PBXGroup;
 			children = (
@@ -347,10 +383,10 @@
 		CEADCA9F22B697C10090EED2 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				CE7B31EA230190F900B3A8F5 /* Model */,
+				CE7B31E9230190EF00B3A8F5 /* ViewModel */,
+				CE7B31E8230190D800B3A8F5 /* ViewController */,
 				CEF0C3A422EB286E003C0A7B /* View */,
-				CEADCAA822B6D0B40090EED2 /* FeedViewController.swift */,
-				CEADCAAA22B6D3330090EED2 /* SessionSummaryViewController.swift */,
-				CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -794,6 +830,7 @@
 				CE36DFAD22C95E4600DAFA0E /* DataStructuresViewController.swift in Sources */,
 				CE36DFAF22C95E8100DAFA0E /* ArrayViewController.swift in Sources */,
 				CEA1ACD922E30119009801CD /* UnitsSearcher.swift in Sources */,
+				CE7B31F22301965E00B3A8F5 /* FeedViewModel.swift in Sources */,
 				CE36DFCD22C9679100DAFA0E /* SuffixArrayManipulator.swift in Sources */,
 				CEF0C3B322EB34B2003C0A7B /* SharedViewController-UITableViewDataSource.swift in Sources */,
 				CE36DFD322C96A7300DAFA0E /* SuffixArrayViewController.swift in Sources */,
@@ -805,6 +842,7 @@
 				CEFB803122FCC17000968CB8 /* DataStructuresViewModel.swift in Sources */,
 				CEA1ACD722E3010B009801CD /* DatesSearcher.swift in Sources */,
 				CEF440C522F3815D00761DF1 /* ViewModelState.swift in Sources */,
+				CE7B31F02301965100B3A8F5 /* Extension-UITableViewDelegate.swift in Sources */,
 				CE8EEAEC22E7A52D00612493 /* Searcher.swift in Sources */,
 				CE8F9E0222AEADBC00D8F3B9 /* ViewControllerLifecycleBehavior.swift in Sources */,
 				CE36DFA522C9595A00DAFA0E /* Services.swift in Sources */,
@@ -816,6 +854,7 @@
 				CEF0C3B722EB3A2C003C0A7B /* SharedViewModel.swift in Sources */,
 				CE8F9DFE22AD1D4C00D8F3B9 /* ProfileViewController.swift in Sources */,
 				CE36DFCF22C967B600DAFA0E /* SwiftSuffixArrayManipulator.swift in Sources */,
+				CE7B31EF2301965100B3A8F5 /* Extension-UITableViewDataSource.swift in Sources */,
 				CEADCAAF22B6DC5C0090EED2 /* TimerItem.swift in Sources */,
 				CEADCAB422B6E25F0090EED2 /* TimerViewCell.swift in Sources */,
 				CEA5BF8222A3E417001C2048 /* AppDelegate.swift in Sources */,
@@ -824,6 +863,7 @@
 				CE36DFD122C968F800DAFA0E /* AlgoProvider.swift in Sources */,
 				CE36DFDC22CB8F5900DAFA0E /* InverseSuffixIterator.swift in Sources */,
 				CE06473C22D690B600FD7BEE /* SharedViewController.swift in Sources */,
+				CE7B31EE2301965100B3A8F5 /* Extension-UISearchResultsUpdating.swift in Sources */,
 				CE8F9DF122AD0CE100D8F3B9 /* BenchmarkViewController.swift in Sources */,
 				CE36DFBB22C960E200DAFA0E /* SwiftDictionaryManipulator.swift in Sources */,
 				CEADCAA922B6D0B40090EED2 /* FeedViewController.swift in Sources */,
