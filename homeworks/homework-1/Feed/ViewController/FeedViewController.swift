@@ -14,7 +14,7 @@ class FeedViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
-    lazy var viewModel = FeedViewModel()
+    lazy var viewModel = FeedViewModel(provider: ServiceLocator.shared.getService())
     
     var isSearchBarEmpty: Bool {
         guard let query = searchController.searchBar.text else {
@@ -38,7 +38,6 @@ class FeedViewController: UIViewController {
         viewModel.bind{[unowned self] (state) in
             switch(state){
             case .result:
-                print("result")
                 self.tableView.reloadData()
                 break
             default:

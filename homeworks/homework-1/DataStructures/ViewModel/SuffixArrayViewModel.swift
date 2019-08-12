@@ -26,7 +26,9 @@ class SuffixArrayViewModel: DataStructuresViewModel {
     
     override func test() {
         if suffixArrayMinpulator.arrayHasObjects() {
-            creationAlgoTime = suffixArrayMinpulator.setupWithObjects(items:Services.algoProvider.all, reverse:false)
+            let provider:AlgorithmsProvider? = ServiceLocator.shared.getService()
+            let algorithmItems = provider?.getAlgorithmsList() ??  [String]()
+            creationAlgoTime = suffixArrayMinpulator.setupWithObjects(items:algorithmItems, reverse:false)
             search10Words = suffixArrayMinpulator.searchRandomWords(count: 10, wordSize: 3)
         } else {
             

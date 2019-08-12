@@ -13,8 +13,6 @@
 		CE06474522D9222900FD7BEE /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06474422D9222900FD7BEE /* ShareViewController.swift */; };
 		CE06474822D9222900FD7BEE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE06474622D9222900FD7BEE /* MainInterface.storyboard */; };
 		CE06474C22D9222900FD7BEE /* OtusShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE06474222D9222900FD7BEE /* OtusShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CE36DFA522C9595A00DAFA0E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFA422C9595A00DAFA0E /* Services.swift */; };
-		CE36DFA722C9598C00DAFA0E /* FeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */; };
 		CE36DFAB22C95D0100DAFA0E /* DataStructures.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE36DFAA22C95D0100DAFA0E /* DataStructures.storyboard */; };
 		CE36DFAD22C95E4600DAFA0E /* DataStructuresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFAC22C95E4600DAFA0E /* DataStructuresViewController.swift */; };
 		CE36DFAF22C95E8100DAFA0E /* ArrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFAE22C95E8100DAFA0E /* ArrayViewController.swift */; };
@@ -120,8 +118,6 @@
 		CE06474922D9222900FD7BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE06475122D9235500FD7BEE /* OtusShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OtusShareExtension.entitlements; sourceTree = "<group>"; };
 		CE06475222D9236800FD7BEE /* homework-1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "homework-1.entitlements"; sourceTree = "<group>"; };
-		CE36DFA422C9595A00DAFA0E /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
-		CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataProvider.swift; sourceTree = "<group>"; };
 		CE36DFAA22C95D0100DAFA0E /* DataStructures.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DataStructures.storyboard; sourceTree = "<group>"; };
 		CE36DFAC22C95E4600DAFA0E /* DataStructuresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructuresViewController.swift; sourceTree = "<group>"; };
 		CE36DFAE22C95E8100DAFA0E /* ArrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayViewController.swift; sourceTree = "<group>"; };
@@ -331,14 +327,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		CE7B31EA230190F900B3A8F5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		CEA5BF7522A3E417001C2048 = {
 			isa = PBXGroup;
 			children = (
@@ -383,7 +371,6 @@
 		CEADCA9F22B697C10090EED2 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				CE7B31EA230190F900B3A8F5 /* Model */,
 				CE7B31E9230190EF00B3A8F5 /* ViewModel */,
 				CE7B31E8230190D800B3A8F5 /* ViewController */,
 				CEF0C3A422EB286E003C0A7B /* View */,
@@ -438,7 +425,6 @@
 		CEF0C3AA22EB2F97003C0A7B /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
-				CE36DFA422C9595A00DAFA0E /* Services.swift */,
 				CE8F9E0122AEADBC00D8F3B9 /* ViewControllerLifecycleBehavior.swift */,
 				CE8F9DF922AD1C4000D8F3B9 /* ChangeColorBehavior.swift */,
 				CEA5BF8A22A3E418001C2048 /* LaunchScreen.storyboard */,
@@ -845,7 +831,6 @@
 				CE7B31F02301965100B3A8F5 /* Extension-UITableViewDelegate.swift in Sources */,
 				CE8EEAEC22E7A52D00612493 /* Searcher.swift in Sources */,
 				CE8F9E0222AEADBC00D8F3B9 /* ViewControllerLifecycleBehavior.swift in Sources */,
-				CE36DFA522C9595A00DAFA0E /* Services.swift in Sources */,
 				CEF440CB22F713B900761DF1 /* BenchmarkViewModel.swift in Sources */,
 				CEFB803722FCC95600968CB8 /* SetViewModel.swift in Sources */,
 				CE36DFB822C95F5100DAFA0E /* Profiler.swift in Sources */,
@@ -868,7 +853,6 @@
 				CE36DFBB22C960E200DAFA0E /* SwiftDictionaryManipulator.swift in Sources */,
 				CEADCAA922B6D0B40090EED2 /* FeedViewController.swift in Sources */,
 				CE36DFC822C9645900DAFA0E /* SetViewController.swift in Sources */,
-				CE36DFA722C9598C00DAFA0E /* FeedDataProvider.swift in Sources */,
 				CEADCA6022B4CB1F0090EED2 /* SplitViewController.swift in Sources */,
 				CEFB803322FCC5DB00968CB8 /* ArrayViewModel.swift in Sources */,
 				CE8EEAEE22E988F300612493 /* Localizator.swift in Sources */,
