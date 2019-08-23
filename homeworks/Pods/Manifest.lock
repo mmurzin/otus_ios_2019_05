@@ -1,0 +1,16 @@
+PODS:
+  - OtusUIComponents (1.0.0)
+
+DEPENDENCIES:
+  - OtusUIComponents
+
+SPEC REPOS:
+  https://github.com/mmurzin/OtusUI:
+    - OtusUIComponents
+
+SPEC CHECKSUMS:
+  OtusUIComponents: 5e66d0a14a565dcbcc458ef0f36e3619d680f1ce
+
+PODFILE CHECKSUM: cea60bb45314ab646bf3816fb3eb629adaa35248
+
+COCOAPODS: 1.6.1
