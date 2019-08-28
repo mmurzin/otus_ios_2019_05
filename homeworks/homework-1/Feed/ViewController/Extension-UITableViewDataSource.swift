@@ -17,8 +17,12 @@ extension FeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath)
-        cell.textLabel?.text = isFiltered ?  viewModel.filteterdDataItems[indexPath.row] :  viewModel.dataItems[indexPath.row]
-        
+        let name = isFiltered ?  viewModel.filteterdDataItems[indexPath.row] :  viewModel.dataItems[indexPath.row]
+        cell.textLabel?.text = name
+        let colorPosition = viewModel.sortedPositions[name]
+        if (colorPosition != nil) {
+            cell.backgroundColor = cellsColors[colorPosition!]
+        }
         return cell
     }
 }

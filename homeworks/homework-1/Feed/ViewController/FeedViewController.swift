@@ -12,9 +12,16 @@ class FeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var runTestsButton: UIBarButtonItem!
+    
+    @IBAction func runTestsClicked(_ sender: Any) {
+        viewModel.runTasks()
+    }
+    
     let searchController = UISearchController(searchResultsController: nil)
     
     lazy var viewModel = FeedViewModel()
+    var cellsColors = [UIColor]()
     
     var isSearchBarEmpty: Bool {
         guard let query = searchController.searchBar.text else {
@@ -38,13 +45,16 @@ class FeedViewController: UIViewController {
         viewModel.bind{[unowned self] (state) in
             switch(state){
             case .result:
-                print("result")
                 self.tableView.reloadData()
                 break
             default:
                 break
             }
         }
+        cellsColors.append(.green)
+        cellsColors.append(.yellow)
+        cellsColors.append(.orange)
+        cellsColors.append(.red)
     }
  
 }

@@ -13,6 +13,7 @@
 		CE06474522D9222900FD7BEE /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06474422D9222900FD7BEE /* ShareViewController.swift */; };
 		CE06474822D9222900FD7BEE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE06474622D9222900FD7BEE /* MainInterface.storyboard */; };
 		CE06474C22D9222900FD7BEE /* OtusShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE06474222D9222900FD7BEE /* OtusShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE075F6023171ECD00393BAC /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE075F5F23171ECD00393BAC /* JobQueue.swift */; };
 		CE36DFA522C9595A00DAFA0E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFA422C9595A00DAFA0E /* Services.swift */; };
 		CE36DFA722C9598C00DAFA0E /* FeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */; };
 		CE36DFAB22C95D0100DAFA0E /* DataStructures.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE36DFAA22C95D0100DAFA0E /* DataStructures.storyboard */; };
@@ -117,6 +118,7 @@
 		CE06474922D9222900FD7BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE06475122D9235500FD7BEE /* OtusShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OtusShareExtension.entitlements; sourceTree = "<group>"; };
 		CE06475222D9236800FD7BEE /* homework-1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "homework-1.entitlements"; sourceTree = "<group>"; };
+		CE075F5F23171ECD00393BAC /* JobQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
 		CE36DFA422C9595A00DAFA0E /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataProvider.swift; sourceTree = "<group>"; };
 		CE36DFAA22C95D0100DAFA0E /* DataStructures.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DataStructures.storyboard; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 		CE7B31DF230170E200B3A8F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE075F5F23171ECD00393BAC /* JobQueue.swift */,
 				CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */,
 			);
 			path = Model;
@@ -577,9 +580,9 @@
 		CEFB802E22FCBEFB00968CB8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CE36DFC922C966AE00DAFA0E /* suffixArray */,
 				CE36DFC022C963B900DAFA0E /* set */,
 				CE36DFB222C95EF000DAFA0E /* array */,
+				CE36DFC922C966AE00DAFA0E /* suffixArray */,
 				CE36DFB922C960BE00DAFA0E /* dictionary */,
 				CE36DFB722C95F5100DAFA0E /* Profiler.swift */,
 				CE36DFC522C9642400DAFA0E /* StringGenerator.swift */,
@@ -852,6 +855,7 @@
 				CEADCA6022B4CB1F0090EED2 /* SplitViewController.swift in Sources */,
 				CEFB803322FCC5DB00968CB8 /* ArrayViewModel.swift in Sources */,
 				CE8EEAEE22E988F300612493 /* Localizator.swift in Sources */,
+				CE075F6023171ECD00393BAC /* JobQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
