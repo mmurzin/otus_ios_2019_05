@@ -15,6 +15,7 @@
 		CE06474C22D9222900FD7BEE /* OtusShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE06474222D9222900FD7BEE /* OtusShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE075F6023171ECD00393BAC /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE075F5F23171ECD00393BAC /* JobQueue.swift */; };
 		CE075F622317B15300393BAC /* JobScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE075F612317B15300393BAC /* JobScheduler.swift */; };
+		CE075F642317BB4200393BAC /* Extension-Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE075F632317BB4200393BAC /* Extension-Date.swift */; };
 		CE36DFA522C9595A00DAFA0E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFA422C9595A00DAFA0E /* Services.swift */; };
 		CE36DFA722C9598C00DAFA0E /* FeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */; };
 		CE36DFAB22C95D0100DAFA0E /* DataStructures.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE36DFAA22C95D0100DAFA0E /* DataStructures.storyboard */; };
@@ -121,6 +122,7 @@
 		CE06475222D9236800FD7BEE /* homework-1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "homework-1.entitlements"; sourceTree = "<group>"; };
 		CE075F5F23171ECD00393BAC /* JobQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
 		CE075F612317B15300393BAC /* JobScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobScheduler.swift; sourceTree = "<group>"; };
+		CE075F632317BB4200393BAC /* Extension-Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-Date.swift"; sourceTree = "<group>"; };
 		CE36DFA422C9595A00DAFA0E /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataProvider.swift; sourceTree = "<group>"; };
 		CE36DFAA22C95D0100DAFA0E /* DataStructures.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DataStructures.storyboard; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				CE7B31E2230179F300B3A8F5 /* Extension-UITableViewDelegate.swift */,
 				CE7B31E423017A1C00B3A8F5 /* Extension-UITableViewDataSource.swift */,
 				CE7B31E623017AAF00B3A8F5 /* Extension-UISearchResultsUpdating.swift */,
+				CE075F632317BB4200393BAC /* Extension-Date.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -820,6 +823,7 @@
 				CE36DFAF22C95E8100DAFA0E /* ArrayViewController.swift in Sources */,
 				CEA1ACD922E30119009801CD /* UnitsSearcher.swift in Sources */,
 				CE7B31E523017A1C00B3A8F5 /* Extension-UITableViewDataSource.swift in Sources */,
+				CE075F642317BB4200393BAC /* Extension-Date.swift in Sources */,
 				CE36DFCD22C9679100DAFA0E /* SuffixArrayManipulator.swift in Sources */,
 				CEF0C3B322EB34B2003C0A7B /* SharedViewController-UITableViewDataSource.swift in Sources */,
 				CE36DFD322C96A7300DAFA0E /* SuffixArrayViewController.swift in Sources */,
