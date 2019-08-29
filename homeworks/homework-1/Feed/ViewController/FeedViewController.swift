@@ -46,11 +46,16 @@ class FeedViewController: UIViewController {
             switch(state){
             case .result:
                 self.tableView.reloadData()
+                self.runTestsButton.isEnabled = !self.viewModel.testsRunned
                 break
             default:
                 break
             }
         }
+        initializeCellsColors()
+    }
+    
+    private func initializeCellsColors() {
         cellsColors.append(.green)
         cellsColors.append(.yellow)
         cellsColors.append(.orange)

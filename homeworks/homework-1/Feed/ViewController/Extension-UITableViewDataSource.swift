@@ -22,6 +22,8 @@ extension FeedViewController: UITableViewDataSource {
         let colorPosition = viewModel.sortedPositions[name]
         if (colorPosition != nil) {
             cell.backgroundColor = cellsColors[colorPosition!]
+        } else {
+            cell.backgroundColor = .white
         }
         return cell
     }

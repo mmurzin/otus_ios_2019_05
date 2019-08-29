@@ -13,8 +13,9 @@ final class FeedViewModel {
     var dataItems:[String] = Services.feedProvider.feedData()
     var filteterdDataItems:[String] = []
     var sortedPositions = [String: Int]()
+    var testsRunned = false
     
-    private let tasksCount = 1_000
+    private let tasksCount = 10_000
     private let testsCount = 4
     private let suffixArrayManipulator: SuffixArrayManipulator = SwiftSuffixArrayManipulator()
     
@@ -37,27 +38,14 @@ final class FeedViewModel {
     }
     
     func runTasks() {
-        var finishedTasks = 0
-        
+        var jobs = [JobQueue]()
+        let scheduler = JobScheduler()
+        self.testsRunned = true
+        self.binder?(.result)
         for index in 0...testsCount - 1 {
             let algorithmName = self.dataItems[index]
             let q = JobQueue(label: algorithmName)
-            q.finishedClosure = {(time, label) in
-                finishedTasks += 1
-                self.testResults[label] = time
-                print("finished: \(label) time: \(time)")
-                if(finishedTasks == self.testsCount){
-                    
-                    let sortedtestResults = self.testResults.sorted { $0.1 < $1.1 }
-                    var position = 0
-                    for (key,_) in sortedtestResults {
-                        self.sortedPositions[key] = position
-                        position += 1
-                    }
-                    print(self.sortedPositions)
-                    self.binder?(.result)
-                }
-            }
+            
             switch index {
                 case 0:
                     var array = [Int]()
@@ -112,7 +100,19 @@ final class FeedViewModel {
                 default:
                     print("index error \(index)")
             }
-            q.run()
+            jobs.append(q)
         }
+        scheduler.scheduleChunk(jobs: jobs,
+                                finishedCompletion: {testResults in
+            self.testsRunned = false
+            let sortedtestResults = testResults.sorted { $0.1 < $1.1 }
+            var position = 0
+            for (key,_) in sortedtestResults {
+                self.sortedPositions[key] = position
+                position += 1
+            }
+            print(self.sortedPositions)
+            self.binder?(.result)
+        })
     }
 }
