@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TimerItem {
+class TimerItem : Codable{
     var duration: Double = 0.0
     var pausedTime: Double = 0.0
     var displayTime: String = "00:00:00"

@@ -87,7 +87,6 @@ class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
         var isPrefixGroupFounded = false
         for item in suffixArray {
             if(queryPrefix == item.suffix.prefix(1)){
-                print("suffix = \(item.suffix)")
                 isPrefixGroupFounded = true
             }
             
