@@ -10,10 +10,14 @@ import Foundation
 
 final class FeedViewModel {
     
-    var dataItems:[String] = Services.feedProvider.feedData()
-    var filteterdDataItems:[String] = []
-    var sortedPositions = [String: Int]()
+    var dataItems:[AlgorithmItem] = [AlgorithmItem]()
+    var filteterdDataItems:[AlgorithmItem] = []
+    let repository: AlgorithmRepository
+    //var sortedPositions = [String: Int]()
     var testsRunned = false
+    private var searchHelper = SearchHelper()
+    private var resultColors = [String]()
+    
     
     private let tasksCount = 10_000
     private let testsCount = 4
@@ -22,19 +26,31 @@ final class FeedViewModel {
     private var binder:((ViewModelState) -> ())? = nil
     private var testResults = [String: Int64]()
     
+    init(repository: AlgorithmRepository) {
+        self.repository = repository
+        self.initializeResultColors()
+    }
+    
     
     func search(query: String){
+        /*
         filteterdDataItems = suffixArrayManipulator.searchAlgoName(query: query)
         print("\(filteterdDataItems)")
         self.binder?(.result)
+        */
     }
     
     func bind(_ binder: @escaping (ViewModelState) -> ()) {
         self.binder = binder
-        dataItems.append(contentsOf: Services.algoProvider.all)
+        /*
         let _ = suffixArrayManipulator.setupWithObjects(
             items:dataItems, reverse:true)
         self.binder?(.result)
+        */
+        repository.getItems{ items in
+            self.dataItems = items
+            self.binder?(.result)
+        }
     }
     
     func runTasks() {
@@ -42,10 +58,12 @@ final class FeedViewModel {
         let scheduler = JobScheduler()
         self.testsRunned = true
         self.binder?(.result)
+        var testedItems = [String: AlgorithmItem]()
+        
         for index in 0...testsCount - 1 {
-            let algorithmName = self.dataItems[index]
-            let q = JobQueue(label: algorithmName)
-            
+            let algorithmItem = self.dataItems[index]
+            let q = JobQueue(label: algorithmItem.name)
+            testedItems[algorithmItem.name] = algorithmItem
             switch index {
                 case 0:
                     var array = [Int]()
@@ -105,14 +123,21 @@ final class FeedViewModel {
         scheduler.scheduleChunk(jobs: jobs,
                                 finishedCompletion: {testResults in
             self.testsRunned = false
-            let sortedtestResults = testResults.sorted { $0.1 < $1.1 }
-            var position = 0
-            for (key,_) in sortedtestResults {
-                self.sortedPositions[key] = position
-                position += 1
+            let sortedTestResults = testResults.sorted { $0.1 < $1.1 }
+            var index = 0
+            for (key,_) in sortedTestResults {
+                testedItems[key]?.cellBackground = self.resultColors[index]
+                index += 1
             }
-            print(self.sortedPositions)
+            self.repository.cacheData(self.dataItems)
             self.binder?(.result)
         })
+    }
+    
+    private func initializeResultColors() {
+        resultColors.append("#00ff00")
+        resultColors.append("#eeee00")
+        resultColors.append("#ffa500")
+        resultColors.append("#ff0000")
     }
 }
