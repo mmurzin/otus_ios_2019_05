@@ -32,23 +32,20 @@ final class FeedViewModel {
     }
     
     
-    func search(query: String){
-        /*
-        filteterdDataItems = suffixArrayManipulator.searchAlgoName(query: query)
-        print("\(filteterdDataItems)")
+    func search(query: String) {
+        let names = suffixArrayManipulator.searchAlgoName(query: query)
+        self.filteterdDataItems = searchHelper.wrapToItems(names: names)
         self.binder?(.result)
-        */
     }
     
     func bind(_ binder: @escaping (ViewModelState) -> ()) {
         self.binder = binder
-        /*
-        let _ = suffixArrayManipulator.setupWithObjects(
-            items:dataItems, reverse:true)
-        self.binder?(.result)
-        */
         repository.getItems{ items in
             self.dataItems = items
+            
+            self.searchHelper.items = items
+            let _ = suffixArrayManipulator.setupWithObjects(
+                items:searchHelper.names, reverse:true)
             self.binder?(.result)
         }
     }
