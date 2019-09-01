@@ -13,6 +13,9 @@
 		CE06474522D9222900FD7BEE /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06474422D9222900FD7BEE /* ShareViewController.swift */; };
 		CE06474822D9222900FD7BEE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE06474622D9222900FD7BEE /* MainInterface.storyboard */; };
 		CE06474C22D9222900FD7BEE /* OtusShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE06474222D9222900FD7BEE /* OtusShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE075F6023171ECD00393BAC /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE075F5F23171ECD00393BAC /* JobQueue.swift */; };
+		CE075F622317B15300393BAC /* JobScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE075F612317B15300393BAC /* JobScheduler.swift */; };
+		CE075F642317BB4200393BAC /* Extension-Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE075F632317BB4200393BAC /* Extension-Date.swift */; };
 		CE36DFA522C9595A00DAFA0E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFA422C9595A00DAFA0E /* Services.swift */; };
 		CE36DFA722C9598C00DAFA0E /* FeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */; };
 		CE36DFAB22C95D0100DAFA0E /* DataStructures.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE36DFAA22C95D0100DAFA0E /* DataStructures.storyboard */; };
@@ -34,6 +37,13 @@
 		CE36DFD322C96A7300DAFA0E /* SuffixArrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFD222C96A7300DAFA0E /* SuffixArrayViewController.swift */; };
 		CE36DFDA22CB33E200DAFA0E /* SuffixSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFD922CB33E200DAFA0E /* SuffixSequence.swift */; };
 		CE36DFDC22CB8F5900DAFA0E /* InverseSuffixIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFDB22CB8F5900DAFA0E /* InverseSuffixIterator.swift */; };
+		CE78B7F6231A7247008B6A14 /* AlgorithmItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7F5231A7247008B6A14 /* AlgorithmItem.swift */; };
+		CE78B7F8231A7328008B6A14 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7F7231A7328008B6A14 /* Storage.swift */; };
+		CE78B7FA231A776C008B6A14 /* AlgorithmsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7F9231A776C008B6A14 /* AlgorithmsRepository.swift */; };
+		CE78B7FE231AAAD0008B6A14 /* AlgorithmItemsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7FD231AAAD0008B6A14 /* AlgorithmItemsProvider.swift */; };
+		CE78B800231AB07A008B6A14 /* SearchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7FF231AB07A008B6A14 /* SearchHelper.swift */; };
+		CE78B802231AB33B008B6A14 /* AlgorithmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B801231AB33B008B6A14 /* AlgorithmRepository.swift */; };
+		CE78B804231ABD8C008B6A14 /* Extension-UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B803231ABD8C008B6A14 /* Extension-UIColor.swift */; };
 		CE7B31DE23015DF600B3A8F5 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B31DD23015DF600B3A8F5 /* FeedViewModel.swift */; };
 		CE7B31E3230179F300B3A8F5 /* Extension-UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B31E2230179F300B3A8F5 /* Extension-UITableViewDelegate.swift */; };
 		CE7B31E523017A1C00B3A8F5 /* Extension-UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B31E423017A1C00B3A8F5 /* Extension-UITableViewDataSource.swift */; };
@@ -117,6 +127,9 @@
 		CE06474922D9222900FD7BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE06475122D9235500FD7BEE /* OtusShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OtusShareExtension.entitlements; sourceTree = "<group>"; };
 		CE06475222D9236800FD7BEE /* homework-1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "homework-1.entitlements"; sourceTree = "<group>"; };
+		CE075F5F23171ECD00393BAC /* JobQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
+		CE075F612317B15300393BAC /* JobScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobScheduler.swift; sourceTree = "<group>"; };
+		CE075F632317BB4200393BAC /* Extension-Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-Date.swift"; sourceTree = "<group>"; };
 		CE36DFA422C9595A00DAFA0E /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataProvider.swift; sourceTree = "<group>"; };
 		CE36DFAA22C95D0100DAFA0E /* DataStructures.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DataStructures.storyboard; sourceTree = "<group>"; };
@@ -138,6 +151,13 @@
 		CE36DFD222C96A7300DAFA0E /* SuffixArrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixArrayViewController.swift; sourceTree = "<group>"; };
 		CE36DFD922CB33E200DAFA0E /* SuffixSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixSequence.swift; sourceTree = "<group>"; };
 		CE36DFDB22CB8F5900DAFA0E /* InverseSuffixIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InverseSuffixIterator.swift; sourceTree = "<group>"; };
+		CE78B7F5231A7247008B6A14 /* AlgorithmItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmItem.swift; sourceTree = "<group>"; };
+		CE78B7F7231A7328008B6A14 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		CE78B7F9231A776C008B6A14 /* AlgorithmsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsRepository.swift; sourceTree = "<group>"; };
+		CE78B7FD231AAAD0008B6A14 /* AlgorithmItemsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmItemsProvider.swift; sourceTree = "<group>"; };
+		CE78B7FF231AB07A008B6A14 /* SearchHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHelper.swift; sourceTree = "<group>"; };
+		CE78B801231AB33B008B6A14 /* AlgorithmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmRepository.swift; sourceTree = "<group>"; };
+		CE78B803231ABD8C008B6A14 /* Extension-UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-UIColor.swift"; sourceTree = "<group>"; };
 		CE7B31DD23015DF600B3A8F5 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		CE7B31E2230179F300B3A8F5 /* Extension-UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		CE7B31E423017A1C00B3A8F5 /* Extension-UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-UITableViewDataSource.swift"; sourceTree = "<group>"; };
@@ -303,6 +323,7 @@
 				CE7B31E2230179F300B3A8F5 /* Extension-UITableViewDelegate.swift */,
 				CE7B31E423017A1C00B3A8F5 /* Extension-UITableViewDataSource.swift */,
 				CE7B31E623017AAF00B3A8F5 /* Extension-UISearchResultsUpdating.swift */,
+				CE075F632317BB4200393BAC /* Extension-Date.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -318,7 +339,15 @@
 		CE7B31DF230170E200B3A8F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE075F5F23171ECD00393BAC /* JobQueue.swift */,
 				CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */,
+				CE075F612317B15300393BAC /* JobScheduler.swift */,
+				CE78B7F5231A7247008B6A14 /* AlgorithmItem.swift */,
+				CE78B7F9231A776C008B6A14 /* AlgorithmsRepository.swift */,
+				CE78B7FD231AAAD0008B6A14 /* AlgorithmItemsProvider.swift */,
+				CE78B7FF231AB07A008B6A14 /* SearchHelper.swift */,
+				CE78B801231AB33B008B6A14 /* AlgorithmRepository.swift */,
+				CE78B803231ABD8C008B6A14 /* Extension-UIColor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -427,6 +456,7 @@
 				CEA5BF8A22A3E418001C2048 /* LaunchScreen.storyboard */,
 				CEA5BF8122A3E417001C2048 /* AppDelegate.swift */,
 				CEF440C422F3815D00761DF1 /* ViewModelState.swift */,
+				CE78B7F7231A7328008B6A14 /* Storage.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -577,9 +607,9 @@
 		CEFB802E22FCBEFB00968CB8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CE36DFC922C966AE00DAFA0E /* suffixArray */,
 				CE36DFC022C963B900DAFA0E /* set */,
 				CE36DFB222C95EF000DAFA0E /* array */,
+				CE36DFC922C966AE00DAFA0E /* suffixArray */,
 				CE36DFB922C960BE00DAFA0E /* dictionary */,
 				CE36DFB722C95F5100DAFA0E /* Profiler.swift */,
 				CE36DFC522C9642400DAFA0E /* StringGenerator.swift */,
@@ -804,6 +834,7 @@
 				CEF440CF22F715ED00761DF1 /* BenchmarkViewController-UICollectionViewDataSource.swift in Sources */,
 				CE36DFBF22C9612800DAFA0E /* DictionaryViewController.swift in Sources */,
 				CEFB803522FCC79100968CB8 /* DictionaryViewModel.swift in Sources */,
+				CE78B800231AB07A008B6A14 /* SearchHelper.swift in Sources */,
 				CE36DFB622C95F2900DAFA0E /* SwiftArrayManipulator.swift in Sources */,
 				CE36DFBD22C960FD00DAFA0E /* DictionaryManipulator.swift in Sources */,
 				CE36DFDA22CB33E200DAFA0E /* SuffixSequence.swift in Sources */,
@@ -814,6 +845,8 @@
 				CE36DFAF22C95E8100DAFA0E /* ArrayViewController.swift in Sources */,
 				CEA1ACD922E30119009801CD /* UnitsSearcher.swift in Sources */,
 				CE7B31E523017A1C00B3A8F5 /* Extension-UITableViewDataSource.swift in Sources */,
+				CE78B7FE231AAAD0008B6A14 /* AlgorithmItemsProvider.swift in Sources */,
+				CE075F642317BB4200393BAC /* Extension-Date.swift in Sources */,
 				CE36DFCD22C9679100DAFA0E /* SuffixArrayManipulator.swift in Sources */,
 				CEF0C3B322EB34B2003C0A7B /* SharedViewController-UITableViewDataSource.swift in Sources */,
 				CE36DFD322C96A7300DAFA0E /* SuffixArrayViewController.swift in Sources */,
@@ -821,6 +854,7 @@
 				CE7B31E3230179F300B3A8F5 /* Extension-UITableViewDelegate.swift in Sources */,
 				CE8F9DFA22AD1C4000D8F3B9 /* ChangeColorBehavior.swift in Sources */,
 				CEADCA5E22B4C9AE0090EED2 /* TabBarViewController.swift in Sources */,
+				CE78B802231AB33B008B6A14 /* AlgorithmRepository.swift in Sources */,
 				CEFB803922FCC97600968CB8 /* SuffixArrayViewModel.swift in Sources */,
 				CEFB803122FCC17000968CB8 /* DataStructuresViewModel.swift in Sources */,
 				CEA1ACD722E3010B009801CD /* DatesSearcher.swift in Sources */,
@@ -830,11 +864,15 @@
 				CE36DFA522C9595A00DAFA0E /* Services.swift in Sources */,
 				CEF440CB22F713B900761DF1 /* BenchmarkViewModel.swift in Sources */,
 				CEFB803722FCC95600968CB8 /* SetViewModel.swift in Sources */,
+				CE78B7F6231A7247008B6A14 /* AlgorithmItem.swift in Sources */,
+				CE075F622317B15300393BAC /* JobScheduler.swift in Sources */,
 				CE36DFB822C95F5100DAFA0E /* Profiler.swift in Sources */,
 				CE8F9DC622A447F200D8F3B9 /* AvatarComponent.swift in Sources */,
 				CEF0C3B722EB3A2C003C0A7B /* SharedViewModel.swift in Sources */,
+				CE78B7FA231A776C008B6A14 /* AlgorithmsRepository.swift in Sources */,
 				CE8F9DFE22AD1D4C00D8F3B9 /* ProfileViewController.swift in Sources */,
 				CE36DFCF22C967B600DAFA0E /* SwiftSuffixArrayManipulator.swift in Sources */,
+				CE78B7F8231A7328008B6A14 /* Storage.swift in Sources */,
 				CEADCAAF22B6DC5C0090EED2 /* TimerItem.swift in Sources */,
 				CEADCAB422B6E25F0090EED2 /* TimerViewCell.swift in Sources */,
 				CEA5BF8222A3E417001C2048 /* AppDelegate.swift in Sources */,
@@ -850,8 +888,10 @@
 				CE36DFC822C9645900DAFA0E /* SetViewController.swift in Sources */,
 				CE36DFA722C9598C00DAFA0E /* FeedDataProvider.swift in Sources */,
 				CEADCA6022B4CB1F0090EED2 /* SplitViewController.swift in Sources */,
+				CE78B804231ABD8C008B6A14 /* Extension-UIColor.swift in Sources */,
 				CEFB803322FCC5DB00968CB8 /* ArrayViewModel.swift in Sources */,
 				CE8EEAEE22E988F300612493 /* Localizator.swift in Sources */,
+				CE075F6023171ECD00393BAC /* JobQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

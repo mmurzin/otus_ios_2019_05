@@ -12,9 +12,19 @@ class FeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var runTestsButton: UIBarButtonItem!
+    
+    @IBAction func runTestsClicked(_ sender: Any) {
+        viewModel.runTasks()
+    }
+    
     let searchController = UISearchController(searchResultsController: nil)
     
-    lazy var viewModel = FeedViewModel()
+    lazy var viewModel = FeedViewModel(
+        repository: AlgorithmRepository(
+            storage: AlgorithmsStorage(),
+            provider: Services.feedItemsProvider)
+    )
     
     var isSearchBarEmpty: Bool {
         guard let query = searchController.searchBar.text else {
@@ -38,13 +48,12 @@ class FeedViewController: UIViewController {
         viewModel.bind{[unowned self] (state) in
             switch(state){
             case .result:
-                print("result")
                 self.tableView.reloadData()
+                self.runTestsButton.isEnabled = !self.viewModel.testsRunned
                 break
             default:
                 break
             }
         }
     }
- 
 }

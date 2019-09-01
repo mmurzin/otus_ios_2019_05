@@ -55,8 +55,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KSE-On-Uf1"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Nc0-uY-W07"/>
+                    <navigationItem key="navigationItem" id="Nc0-uY-W07">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Xg9-UF-Vvf">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="F5P-24-JjC">
+                                <rect key="frame" x="327" y="7" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Run Tests"/>
+                                <connections>
+                                    <action selector="runTestsClicked:" destination="CZV-7x-pIP" eventType="touchUpInside" id="KxW-eP-9gU"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="runTestsClicked:" destination="CZV-7x-pIP" id="eS2-XC-OSo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="runTestsButton" destination="Xg9-UF-Vvf" id="Q9z-Xa-Epj"/>
                         <outlet property="tableView" destination="HDd-H6-UYh" id="CqQ-97-DVe"/>
                     </connections>
                 </viewController>

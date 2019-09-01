@@ -13,7 +13,7 @@ extension FeedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "DataStructures", bundle: nil)
-        let name =  viewModel.dataItems[indexPath.row]
+        let name =  (isFiltered ?  viewModel.filteterdDataItems[indexPath.row] :  viewModel.dataItems[indexPath.row]).name
         var viewController:UIViewController?
         
         switch name {

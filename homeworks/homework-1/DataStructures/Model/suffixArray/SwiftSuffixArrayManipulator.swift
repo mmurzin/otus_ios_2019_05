@@ -10,6 +10,7 @@ import Foundation
 
 class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
     
+    public static let DEFAULT_WORD_SIZE = 14
     var algoSuffixArray:[(suffix: String, algoName: String)] = []
     var randomSuffixArray:[(suffix: String, algoName: String)] = []
     
@@ -24,7 +25,7 @@ class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
     func setupWithSize(_ size: Int) -> TimeInterval {
         return Profiler.runClosureForTime() {
             self.randomSuffixArray = self.createSuffixArray(
-                items: self.randomizeWords(size: size, wordSize: 14), reverse: false)
+                items: SwiftSuffixArrayManipulator.randomizeWords(size: size, wordSize: SwiftSuffixArrayManipulator.DEFAULT_WORD_SIZE), reverse: false)
         }
     }
     
@@ -38,7 +39,7 @@ class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
     
     func searchRandomWords(count: Int, wordSize: Int) -> TimeInterval {
         let time =  Profiler.runClosureForTime() {
-            let words = self.randomizeWords(size: count, wordSize: wordSize)
+            let words = SwiftSuffixArrayManipulator.randomizeWords(size: count, wordSize: wordSize)
             for word in words {
                 let result = self.search(query: word, suffixArray: self.algoSuffixArray)
                 print(result)
@@ -48,7 +49,7 @@ class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
         return time
     }
     
-    private func randomizeWords(size: Int, wordSize: Int) -> [String] {
+    public static func randomizeWords(size: Int, wordSize: Int) -> [String] {
         var words: [String] =  []
         var value = 0
         let stringGenerator = StringGenerator()
@@ -59,7 +60,7 @@ class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
         return words
     }
     
-    private func createSuffixArray(items: [String], reverse: Bool) -> [(suffix: String, algoName: String)] {
+    func createSuffixArray(items: [String], reverse: Bool) -> [(suffix: String, algoName: String)] {
         var suffixArray:[(suffix: String, algoName: String)] = []
         for word in items {
             if(reverse) {
@@ -86,7 +87,6 @@ class SwiftSuffixArrayManipulator: SuffixArrayManipulator {
         var isPrefixGroupFounded = false
         for item in suffixArray {
             if(queryPrefix == item.suffix.prefix(1)){
-                print("suffix = \(item.suffix)")
                 isPrefixGroupFounded = true
             }
             
