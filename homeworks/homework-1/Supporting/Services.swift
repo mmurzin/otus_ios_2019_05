@@ -16,4 +16,10 @@ class Services {
     static var algoProvider: AlgoProvider = {
         return AlgoProvider()
     }()
+    
+    static var feedItemsProvider: AlgorithmItemsProvider = {
+        return AlgorithmItemsProvider(
+            namesWithTest: FeedDataProvider().feedData(),
+            namesWithoutTest: AlgoProvider().all)
+    }()
 }

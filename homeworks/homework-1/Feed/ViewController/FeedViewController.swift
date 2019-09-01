@@ -20,8 +20,11 @@ class FeedViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
-    lazy var viewModel = FeedViewModel()
-    var cellsColors = [UIColor]()
+    lazy var viewModel = FeedViewModel(
+        repository: AlgorithmRepository(
+            storage: AlgorithmsStorage(),
+            provider: Services.feedItemsProvider)
+    )
     
     var isSearchBarEmpty: Bool {
         guard let query = searchController.searchBar.text else {
@@ -52,14 +55,5 @@ class FeedViewController: UIViewController {
                 break
             }
         }
-        initializeCellsColors()
     }
-    
-    private func initializeCellsColors() {
-        cellsColors.append(.green)
-        cellsColors.append(.yellow)
-        cellsColors.append(.orange)
-        cellsColors.append(.red)
-    }
- 
 }

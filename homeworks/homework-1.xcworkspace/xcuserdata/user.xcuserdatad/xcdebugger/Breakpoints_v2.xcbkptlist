@@ -9,28 +9,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "homework-1/Feed/ViewModel/FeedViewModel.swift"
-            timestampString = "588757908.634123"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "search(query:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "homework-1/Feed/ViewController/FeedViewController.swift"
-            timestampString = "588757908.634505"
+            timestampString = "588971464.8012969"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66">
+            startingLineNumber = "60"
+            endingLineNumber = "60">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -55,13 +39,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "homework-1/Feed/ViewModel/FeedViewModel.swift"
-            timestampString = "588757908.6347899"
+            filePath = "homework-1/Supporting/Storage.swift"
+            timestampString = "588971464.801875"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "runTasks()"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "store(_:to:as:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
