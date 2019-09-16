@@ -45,13 +45,22 @@
                                     <outlet property="delegate" destination="CZV-7x-pIP" id="c74-ss-5Je"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="iv1-d4-Yq8">
+                                <rect key="frame" x="187" y="428" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="HUF-Yj-Uqs"/>
+                                    <constraint firstAttribute="height" constant="40" id="yuj-br-FOj"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="iv1-d4-Yq8" firstAttribute="centerX" secondItem="wIM-an-kt2" secondAttribute="centerX" id="Bxx-qv-z0R"/>
                             <constraint firstItem="HDd-H6-UYh" firstAttribute="leading" secondItem="KSE-On-Uf1" secondAttribute="leading" id="Meb-gw-Fl4"/>
                             <constraint firstItem="HDd-H6-UYh" firstAttribute="bottom" secondItem="KSE-On-Uf1" secondAttribute="bottom" id="Z1a-IX-Vh7"/>
                             <constraint firstItem="HDd-H6-UYh" firstAttribute="trailing" secondItem="KSE-On-Uf1" secondAttribute="trailing" id="hfr-49-Jqe"/>
                             <constraint firstItem="HDd-H6-UYh" firstAttribute="top" secondItem="KSE-On-Uf1" secondAttribute="top" id="rSc-9w-urU"/>
+                            <constraint firstItem="iv1-d4-Yq8" firstAttribute="centerY" secondItem="wIM-an-kt2" secondAttribute="centerY" id="tZM-9O-gbg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KSE-On-Uf1"/>
                     </view>
@@ -71,6 +80,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="itemsLoadingIndicator" destination="iv1-d4-Yq8" id="KaP-4g-2yY"/>
                         <outlet property="runTestsButton" destination="Xg9-UF-Vvf" id="Q9z-Xa-Epj"/>
                         <outlet property="tableView" destination="HDd-H6-UYh" id="CqQ-97-DVe"/>
                     </connections>

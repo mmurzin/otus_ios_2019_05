@@ -13,6 +13,7 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var runTestsButton: UIBarButtonItem!
+    @IBOutlet weak var itemsLoadingIndicator: UIActivityIndicatorView!
     
     @IBAction func runTestsClicked(_ sender: Any) {
         viewModel.runTasks()
@@ -38,6 +39,7 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loading(isLoading: true)
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Algorithm"
@@ -47,12 +49,24 @@ class FeedViewController: UIViewController {
         viewModel.bind{[unowned self] (state) in
             switch(state){
             case .result:
+                self.loading(isLoading: false)
                 self.tableView.reloadData()
-                self.runTestsButton.isEnabled = !self.viewModel.testsRunned
+                self.runTestsButton.isEnabled = !self.viewModel.testsRunned && !self.viewModel.loading
                 break
             default:
                 break
             }
+        }
+    }
+    
+    private func loading(isLoading: Bool){
+        if isLoading {
+            self.runTestsButton.isEnabled = false
+            self.tableView.isHidden = true
+            self.itemsLoadingIndicator.isHidden = false
+        } else {
+            self.tableView.isHidden = false
+            self.itemsLoadingIndicator.isHidden = true
         }
     }
 }
