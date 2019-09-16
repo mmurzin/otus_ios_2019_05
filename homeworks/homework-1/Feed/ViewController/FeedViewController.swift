@@ -22,7 +22,6 @@ class FeedViewController: UIViewController {
     
     lazy var viewModel = FeedViewModel(
         repository: AlgorithmRepository(
-            storage: AlgorithmsStorage(),
             provider: Services.feedItemsProvider)
     )
     

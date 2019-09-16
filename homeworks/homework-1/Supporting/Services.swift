@@ -18,8 +18,13 @@ class Services {
     }()
     
     static var feedItemsProvider: AlgorithmItemsProvider = {
-        return AlgorithmItemsProvider(
-            namesWithTest: FeedDataProvider().feedData(),
-            namesWithoutTest: AlgoProvider().all)
+        return AlgorithmItemsProvider(networkClient: Services.networkClient)
+    }()
+    
+    static var networkClient: NetworkClient = {
+        return NetworkClientBuilder()
+            .setScheme(scheme: "https")
+            .setHost(host: "mmurzin.ru")
+            .build()
     }()
 }

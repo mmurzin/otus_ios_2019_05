@@ -7,29 +7,60 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct AlgorithmRepository {
-    let storage: AlgorithmsStorage
     let provider: AlgorithmItemsProvider
+    let realm = try? Realm()
     
-    init(storage: AlgorithmsStorage, provider: AlgorithmItemsProvider) {
-        self.storage = storage
+    init(provider: AlgorithmItemsProvider) {
         self.provider = provider
     }
     
-    func getItems(completion: ([AlgorithmItem])->()) {
-        if storage.isCacheExist() {
-            storage.getCachedData(completion)
-        } else {
-            provider.getRemoteAlgorithmItems{ items in
-                storage.cacheData(items)
-                completion(items)
+    func getItems(completion: @escaping ([AlgorithmItem])->()) {
+        DispatchQueue.main.async {
+            let result = self.realm?.objects(AlgorithmItem.self)
+            if (result?.count ?? 0) > 0 {
+                let items = Array(result!)
+                if items.count > 0 {
+                    completion(items)
+                } else {
+                    print("Realm cache error")
+                    completion([])
+                }
+            } else {
+                self.provider.getRemoteAlgorithmItems({ (items: [AlgorithmItem]) in
+                    completion(items)
+                    self.cacheData(values: items)
+                })
             }
         }
     }
     
-    func cacheData(_ items:[AlgorithmItem]){
-        storage.cacheData(items)
+    private func cacheData(values:[AlgorithmItem]){
+        DispatchQueue.main.async {
+            do {
+                let result = self.realm?.objects(AlgorithmItem.self)
+                guard (result != nil) else { return }
+                self.realm?.beginWrite()
+                self.realm?.delete(result!)
+                self.realm?.add(values)
+                try self.realm?.commitWrite()
+                print(self.realm?.configuration.fileURL?.absoluteURL as Any)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
+    
+    
+    func updateItems(_ changes: [AlgorithmItem: String]){
+        for (item, color) in changes {
+            try? realm?.write {
+                item.cellBackground = color
+            }
+        }
+    }
+    
     
 }

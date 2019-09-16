@@ -2,12 +2,16 @@
 # platform :ios, '9.0'
 
 source 'https://github.com/mmurzin/OtusUI.git'
+source 'https://cdn.cocoapods.org/'
 
 target 'homework-1' do
   use_frameworks!
 
   pod 'OtusUIComponents'
-
+  pod 'DynamicJSON'
+  pod 'RealmSwift'
+  pod 'Realm'
+  
 end
 
 target 'OtusShareExtension' do

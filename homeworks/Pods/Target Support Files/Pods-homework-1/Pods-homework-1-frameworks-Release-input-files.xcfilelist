@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-homework-1/Pods-homework-1-frameworks.sh
+${BUILT_PRODUCTS_DIR}/DynamicJSON/DynamicJSON.framework
+${BUILT_PRODUCTS_DIR}/OtusUIComponents/OtusUIComponents.framework
+${BUILT_PRODUCTS_DIR}/Realm/Realm.framework
+${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework
