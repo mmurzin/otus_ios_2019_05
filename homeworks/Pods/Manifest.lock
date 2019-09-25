@@ -1,16 +1,21 @@
 PODS:
   - OtusUIComponents (1.0.0)
+  - RxSwift (5.0.0)
 
 DEPENDENCIES:
   - OtusUIComponents
+  - RxSwift (~> 5)
 
 SPEC REPOS:
   https://github.com/mmurzin/OtusUI:
     - OtusUIComponents
+  trunk:
+    - RxSwift
 
 SPEC CHECKSUMS:
   OtusUIComponents: 5e66d0a14a565dcbcc458ef0f36e3619d680f1ce
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
 
-PODFILE CHECKSUM: cea60bb45314ab646bf3816fb3eb629adaa35248
+PODFILE CHECKSUM: 80cc333c2c5b217f002bf8913012924b48a540af
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.0.beta.2

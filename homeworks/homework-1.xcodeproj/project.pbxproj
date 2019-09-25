@@ -776,16 +776,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-homework-1/Pods-homework-1-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/OtusUIComponents/OtusUIComponents.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-homework-1/Pods-homework-1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OtusUIComponents.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-homework-1/Pods-homework-1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
