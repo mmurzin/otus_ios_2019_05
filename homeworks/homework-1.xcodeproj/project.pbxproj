@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,7 +39,7 @@
 		CE36DFDC22CB8F5900DAFA0E /* InverseSuffixIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFDB22CB8F5900DAFA0E /* InverseSuffixIterator.swift */; };
 		CE78B7F6231A7247008B6A14 /* AlgorithmItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7F5231A7247008B6A14 /* AlgorithmItem.swift */; };
 		CE78B7F8231A7328008B6A14 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7F7231A7328008B6A14 /* Storage.swift */; };
-		CE78B7FA231A776C008B6A14 /* AlgorithmsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7F9231A776C008B6A14 /* AlgorithmsRepository.swift */; };
+		CE78B7FA231A776C008B6A14 /* AlgorithmsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7F9231A776C008B6A14 /* AlgorithmsStorage.swift */; };
 		CE78B7FE231AAAD0008B6A14 /* AlgorithmItemsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7FD231AAAD0008B6A14 /* AlgorithmItemsProvider.swift */; };
 		CE78B800231AB07A008B6A14 /* SearchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7FF231AB07A008B6A14 /* SearchHelper.swift */; };
 		CE78B802231AB33B008B6A14 /* AlgorithmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B801231AB33B008B6A14 /* AlgorithmRepository.swift */; };
@@ -153,7 +153,7 @@
 		CE36DFDB22CB8F5900DAFA0E /* InverseSuffixIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InverseSuffixIterator.swift; sourceTree = "<group>"; };
 		CE78B7F5231A7247008B6A14 /* AlgorithmItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmItem.swift; sourceTree = "<group>"; };
 		CE78B7F7231A7328008B6A14 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		CE78B7F9231A776C008B6A14 /* AlgorithmsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsRepository.swift; sourceTree = "<group>"; };
+		CE78B7F9231A776C008B6A14 /* AlgorithmsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsStorage.swift; sourceTree = "<group>"; };
 		CE78B7FD231AAAD0008B6A14 /* AlgorithmItemsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmItemsProvider.swift; sourceTree = "<group>"; };
 		CE78B7FF231AB07A008B6A14 /* SearchHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHelper.swift; sourceTree = "<group>"; };
 		CE78B801231AB33B008B6A14 /* AlgorithmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmRepository.swift; sourceTree = "<group>"; };
@@ -343,7 +343,7 @@
 				CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */,
 				CE075F612317B15300393BAC /* JobScheduler.swift */,
 				CE78B7F5231A7247008B6A14 /* AlgorithmItem.swift */,
-				CE78B7F9231A776C008B6A14 /* AlgorithmsRepository.swift */,
+				CE78B7F9231A776C008B6A14 /* AlgorithmsStorage.swift */,
 				CE78B7FD231AAAD0008B6A14 /* AlgorithmItemsProvider.swift */,
 				CE78B7FF231AB07A008B6A14 /* SearchHelper.swift */,
 				CE78B801231AB33B008B6A14 /* AlgorithmRepository.swift */,
@@ -864,7 +864,7 @@
 				CE36DFB822C95F5100DAFA0E /* Profiler.swift in Sources */,
 				CE8F9DC622A447F200D8F3B9 /* AvatarComponent.swift in Sources */,
 				CEF0C3B722EB3A2C003C0A7B /* SharedViewModel.swift in Sources */,
-				CE78B7FA231A776C008B6A14 /* AlgorithmsRepository.swift in Sources */,
+				CE78B7FA231A776C008B6A14 /* AlgorithmsStorage.swift in Sources */,
 				CE8F9DFE22AD1D4C00D8F3B9 /* ProfileViewController.swift in Sources */,
 				CE36DFCF22C967B600DAFA0E /* SwiftSuffixArrayManipulator.swift in Sources */,
 				CE78B7F8231A7328008B6A14 /* Storage.swift in Sources */,

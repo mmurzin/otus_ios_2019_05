@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 
 struct AlgorithmItemsProvider {
@@ -27,7 +28,11 @@ struct AlgorithmItemsProvider {
         self.all = algorithmItems
     }
     
-    func getRemoteAlgorithmItems(_ completion: ([AlgorithmItem]) -> ()) {
-        completion(self.all)
+    
+    func getRemoteAlgorithmItems() -> Single<[AlgorithmItem]> {
+        return Single<[AlgorithmItem]>.create { single in
+            single(.success(self.all))
+            return Disposables.create {}
+        }
     }
 }

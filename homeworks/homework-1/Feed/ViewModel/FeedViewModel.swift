@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 final class FeedViewModel {
     
@@ -25,6 +26,7 @@ final class FeedViewModel {
     
     private var binder:((ViewModelState) -> ())? = nil
     private var testResults = [String: Int64]()
+    let disposeBag = DisposeBag()
     
     init(repository: AlgorithmRepository) {
         self.repository = repository
@@ -40,14 +42,21 @@ final class FeedViewModel {
     
     func bind(_ binder: @escaping (ViewModelState) -> ()) {
         self.binder = binder
-        repository.getItems{ items in
-            self.dataItems = items
-            
-            self.searchHelper.items = items
-            let _ = suffixArrayManipulator.setupWithObjects(
-                items:searchHelper.names, reverse:true)
-            self.binder?(.result)
-        }
+        
+        repository
+            .getItems()
+            .subscribe { event in
+                switch event {
+                    case .success(let items):
+                        self.dataItems = items
+                        self.searchHelper.items = items
+                        let _ = self.suffixArrayManipulator.setupWithObjects(items:self.searchHelper.names, reverse:true)
+                        self.binder?(.result)
+                    case .error(let error):
+                        print(error)
+                }
+            }
+            .disposed(by: disposeBag)
     }
     
     func runTasks() {
@@ -137,4 +146,6 @@ final class FeedViewModel {
         resultColors.append("#ffa500")
         resultColors.append("#ff0000")
     }
+    
+    
 }
