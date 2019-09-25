@@ -138,7 +138,7 @@ final class FeedViewModel {
             self.repository.cacheData(self.dataItems)
                 .subscribe { event in
                     switch event {
-                        case .success(let _):
+                    case .success( _):
                             self.binder?(.result)
                         case .error(let error):
                             print(error)

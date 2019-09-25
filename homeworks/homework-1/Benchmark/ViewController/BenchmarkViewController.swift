@@ -19,7 +19,7 @@ class BenchmarkViewController: UIViewController {
         }
     }
     
-    var viewModel = BenchmarkViewModel()
+    var viewModel = BenchmarkViewModel(repository: TimerItemsRepository(count: 50))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,11 @@ class BenchmarkViewController: UIViewController {
     private func updateCell(_ indexPath:IndexPath? ) {
         guard let path = indexPath else { return }
         if let cellView = collectionView.cellForItem(at: path) as? TimerViewCell {
-            cellView.timerItem = viewModel.timers[path.row]
+            guard let item = viewModel.timers?[path.row] else {
+                print("item == nil")
+                return
+            }
+            cellView.timerItem = item
             if(viewModel.isAutoUpdateChart) {
                 cellView.updatePieChart()
             }
