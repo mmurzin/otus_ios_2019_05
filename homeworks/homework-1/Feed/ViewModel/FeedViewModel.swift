@@ -136,7 +136,16 @@ final class FeedViewModel {
                 index += 1
             }
             self.repository.cacheData(self.dataItems)
-            self.binder?(.result)
+                .subscribe { event in
+                    switch event {
+                        case .success(let _):
+                            self.binder?(.result)
+                        case .error(let error):
+                            print(error)
+                    }
+                }
+                .disposed(by: self.disposeBag)
+            
         })
     }
     
