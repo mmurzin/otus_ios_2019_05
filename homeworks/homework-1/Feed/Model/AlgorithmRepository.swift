@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 struct AlgorithmRepository {
     let storage: AlgorithmsStorage
@@ -17,19 +18,25 @@ struct AlgorithmRepository {
         self.provider = provider
     }
     
-    func getItems(completion: ([AlgorithmItem])->()) {
+    func getItems() -> Single<[AlgorithmItem]> {
         if storage.isCacheExist() {
-            storage.getCachedData(completion)
+            return storage.getCachedData()
         } else {
-            provider.getRemoteAlgorithmItems{ items in
-                storage.cacheData(items)
-                completion(items)
-            }
+            return
+                provider
+                    .getRemoteAlgorithmItems()
+                    .flatMap({ items -> Single<[AlgorithmItem]> in
+                        return self.cacheData(items)
+                    })
         }
     }
     
-    func cacheData(_ items:[AlgorithmItem]){
+    func cacheData(_ items:[AlgorithmItem]) -> Single<[AlgorithmItem]>{
         storage.cacheData(items)
+        return Single<[AlgorithmItem]>.create { single in
+            single(.success(items))
+            return Disposables.create {}
+        }
     }
     
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		CE075F6023171ECD00393BAC /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE075F5F23171ECD00393BAC /* JobQueue.swift */; };
 		CE075F622317B15300393BAC /* JobScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE075F612317B15300393BAC /* JobScheduler.swift */; };
 		CE075F642317BB4200393BAC /* Extension-Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE075F632317BB4200393BAC /* Extension-Date.swift */; };
+		CE361FD5233C0C6C000D50FC /* TimerItemsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE361FD4233C0C6C000D50FC /* TimerItemsRepository.swift */; };
 		CE36DFA522C9595A00DAFA0E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFA422C9595A00DAFA0E /* Services.swift */; };
 		CE36DFA722C9598C00DAFA0E /* FeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */; };
 		CE36DFAB22C95D0100DAFA0E /* DataStructures.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE36DFAA22C95D0100DAFA0E /* DataStructures.storyboard */; };
@@ -39,7 +40,7 @@
 		CE36DFDC22CB8F5900DAFA0E /* InverseSuffixIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFDB22CB8F5900DAFA0E /* InverseSuffixIterator.swift */; };
 		CE78B7F6231A7247008B6A14 /* AlgorithmItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7F5231A7247008B6A14 /* AlgorithmItem.swift */; };
 		CE78B7F8231A7328008B6A14 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7F7231A7328008B6A14 /* Storage.swift */; };
-		CE78B7FA231A776C008B6A14 /* AlgorithmsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7F9231A776C008B6A14 /* AlgorithmsRepository.swift */; };
+		CE78B7FA231A776C008B6A14 /* AlgorithmsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7F9231A776C008B6A14 /* AlgorithmsStorage.swift */; };
 		CE78B7FE231AAAD0008B6A14 /* AlgorithmItemsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7FD231AAAD0008B6A14 /* AlgorithmItemsProvider.swift */; };
 		CE78B800231AB07A008B6A14 /* SearchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7FF231AB07A008B6A14 /* SearchHelper.swift */; };
 		CE78B802231AB33B008B6A14 /* AlgorithmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B801231AB33B008B6A14 /* AlgorithmRepository.swift */; };
@@ -130,6 +131,7 @@
 		CE075F5F23171ECD00393BAC /* JobQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
 		CE075F612317B15300393BAC /* JobScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobScheduler.swift; sourceTree = "<group>"; };
 		CE075F632317BB4200393BAC /* Extension-Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-Date.swift"; sourceTree = "<group>"; };
+		CE361FD4233C0C6C000D50FC /* TimerItemsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerItemsRepository.swift; sourceTree = "<group>"; };
 		CE36DFA422C9595A00DAFA0E /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataProvider.swift; sourceTree = "<group>"; };
 		CE36DFAA22C95D0100DAFA0E /* DataStructures.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DataStructures.storyboard; sourceTree = "<group>"; };
@@ -153,7 +155,7 @@
 		CE36DFDB22CB8F5900DAFA0E /* InverseSuffixIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InverseSuffixIterator.swift; sourceTree = "<group>"; };
 		CE78B7F5231A7247008B6A14 /* AlgorithmItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmItem.swift; sourceTree = "<group>"; };
 		CE78B7F7231A7328008B6A14 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		CE78B7F9231A776C008B6A14 /* AlgorithmsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsRepository.swift; sourceTree = "<group>"; };
+		CE78B7F9231A776C008B6A14 /* AlgorithmsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsStorage.swift; sourceTree = "<group>"; };
 		CE78B7FD231AAAD0008B6A14 /* AlgorithmItemsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmItemsProvider.swift; sourceTree = "<group>"; };
 		CE78B7FF231AB07A008B6A14 /* SearchHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHelper.swift; sourceTree = "<group>"; };
 		CE78B801231AB33B008B6A14 /* AlgorithmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmRepository.swift; sourceTree = "<group>"; };
@@ -343,7 +345,7 @@
 				CE36DFA622C9598C00DAFA0E /* FeedDataProvider.swift */,
 				CE075F612317B15300393BAC /* JobScheduler.swift */,
 				CE78B7F5231A7247008B6A14 /* AlgorithmItem.swift */,
-				CE78B7F9231A776C008B6A14 /* AlgorithmsRepository.swift */,
+				CE78B7F9231A776C008B6A14 /* AlgorithmsStorage.swift */,
 				CE78B7FD231AAAD0008B6A14 /* AlgorithmItemsProvider.swift */,
 				CE78B7FF231AB07A008B6A14 /* SearchHelper.swift */,
 				CE78B801231AB33B008B6A14 /* AlgorithmRepository.swift */,
@@ -571,6 +573,7 @@
 			isa = PBXGroup;
 			children = (
 				CEADCAAE22B6DC5C0090EED2 /* TimerItem.swift */,
+				CE361FD4233C0C6C000D50FC /* TimerItemsRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -776,16 +779,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-homework-1/Pods-homework-1-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/OtusUIComponents/OtusUIComponents.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-homework-1/Pods-homework-1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OtusUIComponents.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-homework-1/Pods-homework-1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -869,7 +867,7 @@
 				CE36DFB822C95F5100DAFA0E /* Profiler.swift in Sources */,
 				CE8F9DC622A447F200D8F3B9 /* AvatarComponent.swift in Sources */,
 				CEF0C3B722EB3A2C003C0A7B /* SharedViewModel.swift in Sources */,
-				CE78B7FA231A776C008B6A14 /* AlgorithmsRepository.swift in Sources */,
+				CE78B7FA231A776C008B6A14 /* AlgorithmsStorage.swift in Sources */,
 				CE8F9DFE22AD1D4C00D8F3B9 /* ProfileViewController.swift in Sources */,
 				CE36DFCF22C967B600DAFA0E /* SwiftSuffixArrayManipulator.swift in Sources */,
 				CE78B7F8231A7328008B6A14 /* Storage.swift in Sources */,
@@ -885,6 +883,7 @@
 				CE8F9DF122AD0CE100D8F3B9 /* BenchmarkViewController.swift in Sources */,
 				CE36DFBB22C960E200DAFA0E /* SwiftDictionaryManipulator.swift in Sources */,
 				CEADCAA922B6D0B40090EED2 /* FeedViewController.swift in Sources */,
+				CE361FD5233C0C6C000D50FC /* TimerItemsRepository.swift in Sources */,
 				CE36DFC822C9645900DAFA0E /* SetViewController.swift in Sources */,
 				CE36DFA722C9598C00DAFA0E /* FeedDataProvider.swift in Sources */,
 				CEADCA6022B4CB1F0090EED2 /* SplitViewController.swift in Sources */,
