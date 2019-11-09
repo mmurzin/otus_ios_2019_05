@@ -1,16 +1,32 @@
 PODS:
+  - DynamicJSON (2.0.2)
   - OtusUIComponents (1.0.0)
+  - Realm (3.18.0):
+    - Realm/Headers (= 3.18.0)
+  - Realm/Headers (3.18.0)
+  - RealmSwift (3.18.0):
+    - Realm (= 3.18.0)
 
 DEPENDENCIES:
+  - DynamicJSON
   - OtusUIComponents
+  - Realm
+  - RealmSwift
 
 SPEC REPOS:
   https://github.com/mmurzin/OtusUI:
     - OtusUIComponents
+  trunk:
+    - DynamicJSON
+    - Realm
+    - RealmSwift
 
 SPEC CHECKSUMS:
+  DynamicJSON: fc0c5a82980ff8aa956156f04d84fcdb2822e875
   OtusUIComponents: 5e66d0a14a565dcbcc458ef0f36e3619d680f1ce
+  Realm: 7b3d04740facf45e958a514b466a32b04f1113d6
+  RealmSwift: c817b5f374668cf08f649afb05f55d92a787649c
 
-PODFILE CHECKSUM: cea60bb45314ab646bf3816fb3eb629adaa35248
+PODFILE CHECKSUM: 71ed4a222adc2644b40915eb0fbf64ed63f66742
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.0.beta.2

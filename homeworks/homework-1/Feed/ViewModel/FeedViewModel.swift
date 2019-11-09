@@ -13,18 +13,16 @@ final class FeedViewModel {
     var dataItems:[AlgorithmItem] = [AlgorithmItem]()
     var filteterdDataItems:[AlgorithmItem] = []
     let repository: AlgorithmRepository
-    //var sortedPositions = [String: Int]()
     var testsRunned = false
+    var loading = true
+    
     private var searchHelper = SearchHelper()
     private var resultColors = [String]()
-    
-    
     private let tasksCount = 10_000
     private let testsCount = 4
     private let suffixArrayManipulator: SuffixArrayManipulator = SwiftSuffixArrayManipulator()
     
     private var binder:((ViewModelState) -> ())? = nil
-    private var testResults = [String: Int64]()
     
     init(repository: AlgorithmRepository) {
         self.repository = repository
@@ -44,9 +42,12 @@ final class FeedViewModel {
             self.dataItems = items
             
             self.searchHelper.items = items
-            let _ = suffixArrayManipulator.setupWithObjects(
-                items:searchHelper.names, reverse:true)
-            self.binder?(.result)
+            let _ = self.suffixArrayManipulator.setupWithObjects(
+                items:self.searchHelper.names, reverse:true)
+            DispatchQueue.main.async {
+                self.loading = false
+                self.binder?(.result)
+            }
         }
     }
     
@@ -122,12 +123,17 @@ final class FeedViewModel {
             self.testsRunned = false
             let sortedTestResults = testResults.sorted { $0.1 < $1.1 }
             var index = 0
+            var updates = [AlgorithmItem: String]()
             for (key,_) in sortedTestResults {
-                testedItems[key]?.cellBackground = self.resultColors[index]
+                if testedItems[key] != nil {
+                    updates[testedItems[key]!] = self.resultColors[index]
+                }
                 index += 1
             }
-            self.repository.cacheData(self.dataItems)
-            self.binder?(.result)
+            self.repository.updateItems(updates)
+            DispatchQueue.main.async {
+                self.binder?(.result)
+            }
         })
     }
     

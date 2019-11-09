@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,6 +37,9 @@
 		CE36DFD322C96A7300DAFA0E /* SuffixArrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFD222C96A7300DAFA0E /* SuffixArrayViewController.swift */; };
 		CE36DFDA22CB33E200DAFA0E /* SuffixSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFD922CB33E200DAFA0E /* SuffixSequence.swift */; };
 		CE36DFDC22CB8F5900DAFA0E /* InverseSuffixIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DFDB22CB8F5900DAFA0E /* InverseSuffixIterator.swift */; };
+		CE782742232E914200EBC6BA /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE782741232E914200EBC6BA /* NetworkClient.swift */; };
+		CE782744232EB5F400EBC6BA /* Extension-URLComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE782743232EB5F400EBC6BA /* Extension-URLComponents.swift */; };
+		CE782754232F85F200EBC6BA /* RealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE782753232F85F200EBC6BA /* RealmObject.swift */; };
 		CE78B7F6231A7247008B6A14 /* AlgorithmItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7F5231A7247008B6A14 /* AlgorithmItem.swift */; };
 		CE78B7F8231A7328008B6A14 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7F7231A7328008B6A14 /* Storage.swift */; };
 		CE78B7FA231A776C008B6A14 /* AlgorithmsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7F9231A776C008B6A14 /* AlgorithmsRepository.swift */; };
@@ -151,6 +154,9 @@
 		CE36DFD222C96A7300DAFA0E /* SuffixArrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixArrayViewController.swift; sourceTree = "<group>"; };
 		CE36DFD922CB33E200DAFA0E /* SuffixSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixSequence.swift; sourceTree = "<group>"; };
 		CE36DFDB22CB8F5900DAFA0E /* InverseSuffixIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InverseSuffixIterator.swift; sourceTree = "<group>"; };
+		CE782741232E914200EBC6BA /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		CE782743232EB5F400EBC6BA /* Extension-URLComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-URLComponents.swift"; sourceTree = "<group>"; };
+		CE782753232F85F200EBC6BA /* RealmObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObject.swift; sourceTree = "<group>"; };
 		CE78B7F5231A7247008B6A14 /* AlgorithmItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmItem.swift; sourceTree = "<group>"; };
 		CE78B7F7231A7328008B6A14 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		CE78B7F9231A776C008B6A14 /* AlgorithmsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsRepository.swift; sourceTree = "<group>"; };
@@ -315,6 +321,23 @@
 			path = suffixArray;
 			sourceTree = "<group>";
 		};
+		CE78273E232E8ED000EBC6BA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CE782741232E914200EBC6BA /* NetworkClient.swift */,
+				CE782743232EB5F400EBC6BA /* Extension-URLComponents.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CE782750232F7EE800EBC6BA /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				CE782753232F85F200EBC6BA /* RealmObject.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		CE7B31DB23015CF200B3A8F5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +473,8 @@
 		CEF0C3AA22EB2F97003C0A7B /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				CE782750232F7EE800EBC6BA /* Realm */,
+				CE78273E232E8ED000EBC6BA /* Network */,
 				CE36DFA422C9595A00DAFA0E /* Services.swift */,
 				CE8F9E0122AEADBC00D8F3B9 /* ViewControllerLifecycleBehavior.swift */,
 				CE8F9DF922AD1C4000D8F3B9 /* ChangeColorBehavior.swift */,
@@ -776,16 +801,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-homework-1/Pods-homework-1-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/OtusUIComponents/OtusUIComponents.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-homework-1/Pods-homework-1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OtusUIComponents.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-homework-1/Pods-homework-1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -840,6 +860,7 @@
 				CE36DFDA22CB33E200DAFA0E /* SuffixSequence.swift in Sources */,
 				CEF440CD22F7154700761DF1 /* BenchmarkViewController-UICollectionViewDelegate.swift in Sources */,
 				CE36DFC622C9642400DAFA0E /* StringGenerator.swift in Sources */,
+				CE782744232EB5F400EBC6BA /* Extension-URLComponents.swift in Sources */,
 				CE36DFB422C95F0800DAFA0E /* ArrayManipulator.swift in Sources */,
 				CE36DFAD22C95E4600DAFA0E /* DataStructuresViewController.swift in Sources */,
 				CE36DFAF22C95E8100DAFA0E /* ArrayViewController.swift in Sources */,
@@ -850,6 +871,7 @@
 				CE36DFCD22C9679100DAFA0E /* SuffixArrayManipulator.swift in Sources */,
 				CEF0C3B322EB34B2003C0A7B /* SharedViewController-UITableViewDataSource.swift in Sources */,
 				CE36DFD322C96A7300DAFA0E /* SuffixArrayViewController.swift in Sources */,
+				CE782742232E914200EBC6BA /* NetworkClient.swift in Sources */,
 				CEFB803B22FCD06200968CB8 /* DataStructuresViewController-UITableViewDataSource.swift in Sources */,
 				CE7B31E3230179F300B3A8F5 /* Extension-UITableViewDelegate.swift in Sources */,
 				CE8F9DFA22AD1C4000D8F3B9 /* ChangeColorBehavior.swift in Sources */,
@@ -865,6 +887,7 @@
 				CEF440CB22F713B900761DF1 /* BenchmarkViewModel.swift in Sources */,
 				CEFB803722FCC95600968CB8 /* SetViewModel.swift in Sources */,
 				CE78B7F6231A7247008B6A14 /* AlgorithmItem.swift in Sources */,
+				CE782754232F85F200EBC6BA /* RealmObject.swift in Sources */,
 				CE075F622317B15300393BAC /* JobScheduler.swift in Sources */,
 				CE36DFB822C95F5100DAFA0E /* Profiler.swift in Sources */,
 				CE8F9DC622A447F200D8F3B9 /* AvatarComponent.swift in Sources */,
